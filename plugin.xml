@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../engine/Shopware/Components/Plugin/schema/plugin.xsd">
+    <version>1.0.0</version>
+    <license>GPL V3</license>
+    <copyright>Web-SEO-Consulting</copyright>
+    <author>Web-SEO-Consulting</author>
+    <link>https://www.Web-SEO-Consulting</link>
+
+    <compatibility minVersion="5.6.8" />
+
+    <label lang="de">Tag Manager - Shopware 5 - Matomo und Google</label>
+    <label lang="en">Tag Manager - Shopware 5 - Matomo and Google</label>
+
+    <description lang="en">Tag Manager - Shopware 5 - Matomo und Google</description>
+    <description lang="de">Tag Manager - Shopware 5 - Matomo and Google</description>
+
+    <changelog version="1.0.0">
+        <changes lang="de">Erste Veröffentlichung</changes>
+        <changes lang="en">First Release</changes>
+    </changelog>
+</plugin>

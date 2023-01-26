@@ -1,0 +1,17 @@
+{
+    "name": "wsc/wsc-tagmanager-sw5",
+    "description": "Tag Manager Matomo and Google for Shopware 5",
+    "keywords": ["shopware", "shopware-plugin", "matomo-tag-manager", "google-tag-manager", "datalayer"],
+    "license": "GPL-3.0-or-later",
+    "type": "shopware-plugin",
+    "version": "v1.0.0",
+    "authors": [{
+        "name": "Web-SEO-Consulting"
+    }],
+    "extra": {
+        "installer-name": "WSCTagManagerSW5"
+    },
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}

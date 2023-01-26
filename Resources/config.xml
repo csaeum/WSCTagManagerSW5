@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
+    <elements>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerMatomo</name>
+            <label lang="de-DE">Matomo Allgemein aktivieren</label>
+            <label lang="en-EN">Turn on Matomo General</label>
+            <value>0</value>
+            <description lang="de-DE">Soll Matomo generell geladen werden. So kann man es auch mal abschalten ohne die Einstellungen zu verlieren</description>
+            <description lang="en-EN">Should Matomo generally be loaded. So you can switch it off without losing the settings</description>
+        </element>
+
+        <element scope="shop" type="text">
+            <name>wscTagManagerMatomoURL</name>
+            <label lang="de-DE">Matomo URL (ohne den abschließenden '/')</label>
+            <label lang="en-EN">Matomo URL (without the trailing '/')</label>
+            <value>https://mein.Matomo.de</value>
+            <description lang="de-DE">Ihre URL zu Matomo ohne den abschließenden '/'</description>
+            <description lang="en-EN">Your URL to Matomo without the trailing '/'</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerMatomoTM</name>
+            <label lang="de-DE">Matomo TagManager aktivieren</label>
+            <label lang="en-EN">Activate Matomo TagManager</label>
+            <value>0</value>
+            <description lang="de-DE">Soll der Tag Manager generell geladen werden. So kann man es auch mal abschalten ohne die Einstellungen zu verlieren</description>
+            <description lang="en-EN">Should the Tag Manager generally be loaded. So you can switch it off without losing the settings</description>
+        </element>
+
+        <element scope="shop" type="text">
+            <name>wscTagManagerMatomoTMID</name>
+            <label lang="de-DE">Matomo Container ID</label>
+            <label lang="en-EN">Matomo Container ID</label>
+            <value>XxxXXxxX</value>
+            <description lang="de-DE">Zu finden im Matomo beim einrichten ihres TagManagers</description>
+            <description lang="en-EN">You can find it in Matomo when setting up your TagManager</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerMatomoPage</name>
+            <label lang="de-DE">Matomo Seiten ID aktivieren</label>
+            <label lang="en-EN">Activate Matomo Page ID</label>
+            <value>0</value>
+            <description lang="de-DE">Soll das Matomo Script für einfaches Tracking generell geladen werden. So kann man es auch mal abschalten ohne die Einstellungen zu verlieren</description>
+            <description lang="en-EN">Should the Matomo script be generally loaded for simple tracking. So you can switch it off without losing the settings</description>
+        </element>
+
+        <element scope="shop" type="text">
+            <name>wscTagManagerMatomoPageID</name>
+            <label lang="de-DE">Matomo Seiten ID</label>
+            <label lang="en-EN">Matomo Page ID</label>
+            <value>X</value>
+            <description lang="de-DE">Zu finden im Matomo beim einrichten ihrer Seite</description>
+            <description lang="en-EN">You can find it in Matomo when setting up your site</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerMatomoPageIDSubdomains</name>
+            <label lang="de-DE">Alle Subdomains mit tracken</label>
+            <label lang="en-EN">Track all subdomains</label>
+            <value>0</value>
+            <description lang="de-DE">Hierdurch werden Besucher, die x.ihreDomain.de und y.ihreDomain.de besuchen als eindeutige Besucher gewertet.</description>
+            <description lang="en-EN">As a result, visitors who visit x.yourdomain.de and y.yourdomain.de are counted as unique visitors.</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerMatomoPageIDnoTracking</name>
+            <label lang="de-DE">Tracking-Anfragen nicht senden</label>
+            <label lang="en-EN">Do not send tracking requests</label>
+            <value>0</value>
+            <description lang="de-DE">Hierdurch werden Tracking-Anfragen nicht gesendet, falls der Benutzer nicht getrackt werden möchte. Hinweis: Diese Einstellung hat keine Auswirkung, da die Do-Not-Track Unterstützung serverseitig aktiviert ist.</description>
+            <description lang="en-EN">This will not send tracking requests if the user does not want to be tracked. Note: This setting has no effect because Do-Not-Track support is enabled on the server side.</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerMatomoPageIDnoCookies</name>
+            <label lang="de-DE">Alle Tracking Cookies deaktivieren</label>
+            <label lang="en-EN">Disable all tracking cookies</label>
+            <value>0</value>
+            <description lang="de-DE">Deaktiviert alle First-Party Cookies. Bestehende Matomo Cookies für diese Webseite werden beim nächsten Seitenaufruf gelöscht.</description>
+            <description lang="en-EN">Disables all first-party cookies. Existing Matomo cookies for this website will be deleted the next time the page is accessed.</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerGoogle</name>
+            <label lang="de-DE">Google Allgemein aktivieren</label>
+            <label lang="en-EN">Turn on Google General</label>
+            <value>0</value>
+            <description lang="de-DE">Soll der Google generell geladen werden. So kann man es auch mal abschalten ohne die Einstellungen zu verlieren</description>
+            <description lang="en-EN">ShouShould the Google generally be loaded. So you can switch it off without losing the settings</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerGoogleTM</name>
+            <label lang="de-DE">Google TagManager aktivieren</label>
+            <label lang="en-EN">Activate Google Tag Manager</label>
+            <value>0</value>
+            <description lang="de-DE">Soll der Tag Manager generell geladen werden. So kann man es auch mal abschalten ohne die Einstellungen zu verlieren</description>
+            <description lang="en-EN">ShouShould the Tag Manager generally be loaded. So you can switch it off without losing the settings</description>
+        </element>
+
+        <element scope="shop" type="text">
+            <name>wscTagManagerGoogleTagID</name>
+            <label lang="de-DE">Tag Manager GTM</label>
+            <label lang="en-EN">Tag Manager GTM</label>
+            <value>GTM-xxxxxxx</value>
+            <description lang="de-DE">Zu finden unter tagmanager.google.com</description>
+            <description lang="en-EN">It can be found at tagmanager.google.com</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerGoogleA4</name>
+            <label lang="de-DE">Google Analytics 4 aktivieren (neu ab 14. Oktober 2020)</label>
+            <label lang="en-EN">Activate Google Analytics 4 (new from October 14, 2020)</label>
+            <value>0</value>
+            <description lang="de-DE">Soll Google Analytics 4 generell geladen werden. So kann man es auch mal abschalten ohne die Einstellungen zu verlieren</description>
+            <description lang="en-EN">Should Google Analytics 4 generally be loaded. So you can switch it off without losing the settings</description>
+        </element>
+
+        <element scope="shop" type="text">
+            <name>wscTagManagerGoogleA4ID</name>
+            <label lang="de-DE">Google Analytics 4</label>
+            <label lang="en-EN">Google Analytics 4</label>
+            <value>G-xxxxxxxxxx</value>
+            <description lang="de-DE">Zu finden unter analytics.google.com, nutzt gtag</description>
+            <description lang="en-EN">Located at analytics.google.com, uses gtag</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerGoogleUA</name>
+            <label lang="de-DE">Google Analytics Universal Analytics aktivieren (alt bis 14. Oktober 2020)</label>
+            <label lang="en-EN">Activate Google Analytics Universal Analytics (old to October 14, 2020)</label>
+            <value>0</value>
+            <description lang="de-DE">Soll Google Analytics Universal Analytics generell geladen werden. So kann man es auch mal abschalten ohne die Einstellungen zu verlieren</description>
+            <description lang="en-EN">Should Google Analytics Universal Analytics generally be loaded. So you can switch it off without losing the settings</description>
+        </element>
+
+        <element scope="shop" type="text">
+            <name>wscTagManagerGoogleUAID</name>
+            <label lang="de-DE">Google Analytics Universal Analytics</label>
+            <label lang="en-EN">Google Analytics Universal Analytics</label>
+            <value>UA-xxxxxxxx-x</value>
+            <description lang="de-DE">Zu finden unter analytics.google.com, nutzt gtag</description>
+            <description lang="en-EN">Located at analytics.google.com, uses gtag</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerGoogleAnonymizeIP</name>
+            <label lang="de-DE">Google Analytics IP Anonymisierung</label>
+            <label lang="en-EN">Google Analytics IP anonymization</label>
+            <value>0</value>
+            <description lang="de-DE">(Empfohlen!) Aktivieren um die IP Adresse des Besuchers zu verschleiern</description>
+            <description lang="en-EN">(Recommended!) Enable to disguise the visitor's IP address</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerDataLayer</name>
+            <label lang="de-DE">DataLayer aktivieren</label>
+            <label lang="en-EN">Activate data layer</label>
+            <value>0</value>
+            <description lang="de-DE">(Empfohlen!) Aktivieren um den DataLayer im Header zu erzeugen</description>
+            <description lang="en-EN">(Recommended!) Activate to create the DataLayer in the header</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerDataLayerMatomo</name>
+            <label lang="de-DE">DataLayer Matomo aktivieren</label>
+            <label lang="en-EN">Activate Matomo data layer</label>
+            <value>0</value>
+            <description lang="de-DE">(Empfohlen!) Aktivieren um den DataLayer für Matomo im Header zu erzeugen</description>
+            <description lang="en-EN">(Recommended!) Activate to create the DataLayer for Matomo in the header</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerDataLayerGoogle</name>
+            <label lang="de-DE">DataLayer Google aktivieren</label>
+            <label lang="en-EN">Activate Google data layer</label>
+            <value>0</value>
+            <description lang="de-DE">(Empfohlen!) Aktivieren um den DataLayer für Google im Header zu erzeugen</description>
+            <description lang="en-EN">(Recommended!) Activate to create the for Google DataLayer in the header</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wsc_Cookie_Bing</name>
+            <label lang="de-DE">Cookie für Bing (Microsoft Corporation Advertising)</label>
+            <label lang="en-EN">Cookie for Bing (Microsoft Corporation Advertising)</label>
+            <value>0</value>
+            <description lang="de-DE">Cookie Name: wsc_Cookie_Bing</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Bing</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wsc_Cookie_Clarity</name>
+            <label lang="de-DE">Cookie für Clarity (Microsoft Corporation Clarity)</label>
+            <label lang="en-EN">Cookie for Clarity (Microsoft Corporation Clarity)</label>
+            <value>0</value>
+            <description lang="de-DE">Cookie Name: wsc_Cookie_Clarity</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Clarity</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wsc_Cookie_Facebook</name>
+            <label lang="de-DE">Cookie für Facebook (Meta Platforms Ireland Limited)</label>
+            <label lang="en-EN">Cookie for Facebook (Meta Platforms Ireland Limited)</label>
+            <value>0</value>
+            <description lang="de-DE">Cookie Name: wsc_Cookie_Facebook</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Facebook</description>
+        </element>
+    
+        <element scope="shop" type="boolean">
+            <name>wsc_Cookie_Google</name>
+            <label lang="de-DE">Cookie für Analytics / Tag-Manager (Google Ireland Limited)</label>
+            <label lang="en-EN">Cookie for Analytics / Tag-Manager (Google Ireland Limited)</label>
+            <value>0</value>
+            <description lang="de-DE">Cookie Name: wsc_Cookie_Google</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Google</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wsc_Cookie_GoogleADs</name>
+            <label lang="de-DE">Cookie für AdWords (Google Ireland Limited)</label>
+            <label lang="en-EN">Cookie for AdWords (Google Ireland Limited)</label>
+            <value>0</value>
+            <description lang="de-DE">Cookie Name: wsc_Cookie_GoogleADs</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_GoogleADs</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wsc_Cookie_Hotjar</name>
+            <label lang="de-DE">Cookie für Hotjar Limited</label>
+            <label lang="en-EN">Cookie for Hotjar Limited</label>
+            <value>0</value>
+            <description lang="de-DE">Cookie Name: wsc_Cookie_Hotjar</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Hotjar</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wsc_Cookie_Instagram</name>
+            <label lang="de-DE">Cookie für Instagram (Meta Platforms Ireland Limited)</label>
+            <label lang="en-EN">Cookie for Instagram (Meta Platforms Ireland Limited)</label>
+            <value>0</value>
+            <description lang="de-DE">Cookie Name: wsc_Cookie_Instagram</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Instagram</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wsc_Cookie_Matomo</name>
+            <label lang="de-DE">Cookie für Matomo</label>
+            <label lang="en-EN">Cookie for Matomo</label>
+            <value>0</value>
+            <description lang="de-DE">Cookie Name: wsc_Cookie_Matomo</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Matomo</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wsc_Cookie_Mautic</name>
+            <label lang="de-DE">Cookie für Mautic</label>
+            <label lang="en-EN">Cookie for Mautic</label>
+            <value>0</value>
+            <description lang="de-DE">Cookie Name: wsc_Cookie_Mautic</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Mautic</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wsc_Cookie_Pinterest</name>
+            <label lang="de-DE">Cookie für Pinterest Inc.</label>
+            <label lang="en-EN">Cookie for Pinterest Inc.</label>
+            <value>0</value>
+            <description lang="de-DE">Cookie Name: wsc_Cookie_Pinterest</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Pinterest</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wsc_Cookie_Youtube</name>
+            <label lang="de-DE">Cookie für Youtube (Google Ireland Limited)</label>
+            <label lang="en-EN">Cookie for Youtube (Google Ireland Limited)</label>
+            <value>0</value>
+            <description lang="de-DE">Cookie Name: wsc_Cookie_Youtube</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Youtube</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wsc_Cookie_Zammad</name>
+            <label lang="de-DE">Cookie für Zammad</label>
+            <label lang="en-EN">Cookie for Zammad</label>
+            <value>0</value>
+            <description lang="de-DE">Cookie Name: wsc_Cookie_Zammad</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Zammad</description>
+        </element>
+
+    </elements>
+</config>
