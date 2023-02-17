@@ -58,7 +58,7 @@
     {* add_payment_info - Payment ENDE *}
 
     {* Purchase - Abschluss Seite START *}
-    {if $baseUrl === '/checkout/finish'}
+    {if ($baseUrl === '/checkout/finish') OR ($baseUrl|strstr:"/checkout/finish/sUniqueID")}
         {include file="frontend/index/DataLayer/purchase.tpl"}
     {/if}
     {* Purchase - Abschluss Seite ENDE *}
