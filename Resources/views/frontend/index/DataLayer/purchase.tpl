@@ -41,5 +41,17 @@
 
 {literal}
     ]
+    },
+    'userData': {
+    'sessionId': '{/literal}{$sUserData.additional.user.sessionID}{literal}',
+    'timestamp': '{/literal}{$smarty.now}{literal}',
+    'orderValue': '{/literal}{$sBasket.AmountNet|replace:",":"."}{literal}',
+    'usedCouponCode': '{/literal}{$couponCode}{literal}--hier',
+    'consumerSalutation': '{/literal}{$sUserData.additional.user.salutation}{literal}',
+    'consumerFirstName': '{/literal}{$sUserData.additional.user.firstname}{literal}',
+    'consumerLastName': '{/literal}{$sUserData.additional.user.lastname}{literal}',
+    'consumerEmail': '{/literal}{$sUserData.additional.user.email}{literal}',
+    'consumerCountry': '{/literal}{$sUserData.additional.country.countryiso}{literal}',
+    'consumerZipcode': '{/literal}{$sUserData.billingaddress.zipcode}{literal}'
     }
 {/literal}

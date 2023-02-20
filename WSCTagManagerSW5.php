@@ -36,11 +36,50 @@ class WSCTagManagerSW5 extends Plugin
     {
         return [
             'Enlight_Controller_Action_PostDispatch_Frontend' => 'onFrontend',
+            'Enlight_Controller_Action_PostDispatchSecure_Frontend_Checkout' => 'onFrontendCheckout',
             'CookieCollector_Collect_Cookies' => 'addComfortCookie',
         ];
     }
-     
-    public function onFrontend(\Enlight_Event_EventArgs $args) {
+
+    // START
+
+    public function onFrontendCheckout(\Enlight_Event_EventArgs $args)
+    {
+        $controller = $args->getSubject();
+        $view = $controller->View();
+
+        // Get the order number from the view
+        $orderNumber = $view->getAssign('sOrderNumber');
+
+        // Load the order object from the database using the order number
+        $order = Shopware()->Models()->getRepository('Shopware\Models\Order\Order')->findOneBy(['number' => $orderNumber]);
+
+        // Check if the order exists
+        if ($order) {
+
+            // Get the discount items from the order
+            $discounts = $order->getDetails()->filter(function ($item) {
+                return $item->getMode() == 3; // discount items have a mode of 3
+            });
+
+            // Check if there is at least one discount item
+            if (count($discounts) > 0) {
+                // Get the first discount item
+                $discount = $discounts->first();
+
+                // Get the coupon code from the name of the discount item
+                $couponCode = $discount->getArticleName();
+
+                // Assign the coupon code to the view so it can be displayed on the checkout page
+                $view->assign('couponCode', $couponCode);
+            }
+        }
+    }
+
+    // ENDE
+
+    public function onFrontend(\Enlight_Event_EventArgs $args)
+    {
         $controller = $args->getSubject();
         $view = $controller->View();
         $view->addTemplateDir($this->getPath() . '/Resources/views');
