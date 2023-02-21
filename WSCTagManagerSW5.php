@@ -41,7 +41,12 @@ class WSCTagManagerSW5 extends Plugin
         ];
     }
 
-    // START
+    public function onFrontend(\Enlight_Event_EventArgs $args)
+    {
+        $controller = $args->getSubject();
+        $view = $controller->View();
+        $view->addTemplateDir($this->getPath() . '/Resources/views');
+    }
 
     public function onFrontendCheckout(\Enlight_Event_EventArgs $args)
     {
@@ -74,21 +79,25 @@ class WSCTagManagerSW5 extends Plugin
                 $view->assign('couponCode', $couponCode);
             }
         }
-    }
+        $view->assign('couponCodeFunktion', $couponCode);
 
-    // ENDE
+// Test
+        $session = Shopware()->Container()->get('session');
+        $couponCodePHP = $session->get('sOrderVariables')['sBasket']['sCouponCode'];
+        $view->assign('couponCodePHP', $couponCodePHP);
+// Ausgabe der Variablen im Template
+        $view->assign('eigeneorderNumber', $orderNumber);
+        $view->assign('eigeneorder', $order);
+        $view->assign('eigenediscounts', $discounts);
+        $view->assign('eigenesession', $session);
+        $view->assign('eigene', 'eigene');
 
-    public function onFrontend(\Enlight_Event_EventArgs $args)
-    {
-        $controller = $args->getSubject();
-        $view = $controller->View();
-        $view->addTemplateDir($this->getPath() . '/Resources/views');
     }
 
     public function addComfortCookie(): CookieCollection
     {
         $collection = new CookieCollection();
-        if(Shopware()->Config()->getByNamespace('WSCTagManagerSW5', 'wsc_Cookie_Bing')) {
+        if (Shopware()->Config()->getByNamespace('WSCTagManagerSW5', 'wsc_Cookie_Bing')) {
             $collection->add(new CookieStruct(
                 'wsc_Cookie_Bing',
                 '/^wsc_Cookie_Bing$/',
