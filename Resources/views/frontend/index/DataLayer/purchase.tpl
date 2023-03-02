@@ -46,7 +46,7 @@
     'sessionId': '{/literal}{$sUserData.additional.user.sessionID}{literal}',
     'timestamp': '{/literal}{$smarty.now}{literal}',
     'orderValue': '{/literal}{$sBasket.AmountNet|replace:",":"."}{literal}',
-    'usedCouponCode': '{/literal}{$couponCode}{literal}--hier',
+    'usedCouponCode': '{/literal}{$afvouchercode}{literal}',
     'consumerSalutation': '{/literal}{$sUserData.additional.user.salutation}{literal}',
     'consumerFirstName': '{/literal}{$sUserData.additional.user.firstname}{literal}',
     'consumerLastName': '{/literal}{$sUserData.additional.user.lastname}{literal}',

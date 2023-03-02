@@ -38,7 +38,14 @@ class WSCTagManagerSW5 extends Plugin
             'Enlight_Controller_Action_PostDispatch_Frontend' => 'onFrontend',
             'Enlight_Controller_Action_PostDispatchSecure_Frontend_Checkout' => 'onFrontendCheckout',
             'CookieCollector_Collect_Cookies' => 'addComfortCookie',
+            'Shopware_Modules_Basket_AddVoucher_Inserted' => 'voucherInserted'
         ];
+    }
+
+    public function voucherInserted(\Enlight_Event_EventArgs $args)
+    {
+        $code = $args->get('voucher')["vouchercode"];
+        $_SESSION["afvouchercode"] = $code;
     }
 
     public function onFrontend(\Enlight_Event_EventArgs $args)
@@ -61,6 +68,8 @@ class WSCTagManagerSW5 extends Plugin
 
         // Check if the order exists
         if ($order) {
+            $code = $_SESSION["afvouchercode"];
+            $view->assign("afvouchercode", $code);
 
             // Get the discount items from the order
             $discounts = $order->getDetails()->filter(function ($item) {
@@ -79,24 +88,21 @@ class WSCTagManagerSW5 extends Plugin
                 $view->assign('couponCode', $couponCode);
             }
         }
-        $view->assign('couponCodeFunktion', $couponCode);
-
-// Test
-        $session = Shopware()->Container()->get('session');
-        $couponCodePHP = $session->get('sOrderVariables')['sBasket']['sCouponCode'];
-        $view->assign('couponCodePHP', $couponCodePHP);
-// Ausgabe der Variablen im Template
-        $view->assign('eigeneorderNumber', $orderNumber);
-        $view->assign('eigeneorder', $order);
-        $view->assign('eigenediscounts', $discounts);
-        $view->assign('eigenesession', $session);
-        $view->assign('eigene', 'eigene');
-
     }
 
     public function addComfortCookie(): CookieCollection
     {
         $collection = new CookieCollection();
+
+        if (Shopware()->Config()->getByNamespace('WSCTagManagerSW5', 'wsc_Cookie_Neu')) {
+            $collection->add(new CookieStruct(
+                'Name wsc_Cookie_Neu',
+                '/^wsc_Coo - XX - kie_Neu$/',
+                'Consent Prüfung',
+                CookieGroupStruct::TECHNICAL
+            ));
+        }
+
         if (Shopware()->Config()->getByNamespace('WSCTagManagerSW5', 'wsc_Cookie_Bing')) {
             $collection->add(new CookieStruct(
                 'wsc_Cookie_Bing',
@@ -174,7 +180,7 @@ class WSCTagManagerSW5 extends Plugin
                 'wsc_Cookie_Mautic',
                 '/^wsc_Cookie_Mautic$/',
                 'Mautic',
-                CookieGroupStruct::STATISTICS
+                CookieGroupStruct::COMFORT
             ));
         }
 
@@ -192,7 +198,7 @@ class WSCTagManagerSW5 extends Plugin
                 'wsc_Cookie_Youtube',
                 '/^wsc_Cookie_Youtube$/',
                 'Youtube (Google Ireland Limited)',
-                CookieGroupStruct::STATISTICS
+                CookieGroupStruct::COMFORT
             ));
         }
 
@@ -201,7 +207,7 @@ class WSCTagManagerSW5 extends Plugin
                 'wsc_Cookie_Zammad',
                 '/^wsc_Cookie_Zammad$/',
                 'Zammad',
-                CookieGroupStruct::STATISTICS
+                CookieGroupStruct::COMFORT
             ));
         }
 
