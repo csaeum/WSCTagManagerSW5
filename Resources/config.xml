@@ -184,15 +184,6 @@
             </description>
         </element>
 
-        <element scope="shop" type="boolean">
-            <name>wsc_Cookie_Neu</name>
-            <label lang="de-DE">Cookie für Prüfung des Consent Managers</label>
-            <label lang="en-EN">Cookie for checking the consent manager</label>
-            <value>0</value>
-            <description lang="de-DE">Cookie Name: wsc_Cookie_Neu</description>
-            <description lang="en-EN">Cookie Name: wsc_Cookie_Neu</description>
-        </element>
-
         <element scope="shop" type="text">
             <name>wsc_Cookie_NeuWert</name>
             <label lang="de-DE">Zahl zur Prüfung von Cookie Consent neu starten</label>

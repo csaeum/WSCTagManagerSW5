@@ -18,7 +18,6 @@
     {/if}
 
     {if {config name='wscTagManagerGoogle'}}
-
         {if {config name='wscTagManagerGoogleTM'}}
         {literal}
             <!-- Google Tag Manager (noscript) -->
@@ -29,24 +28,77 @@
         {/literal}
         {/if}
     {/if}
+    <ul>
+        <li>VAR DUMP: {var_dump($smarty.cookies)}</li>
+        <li>Cookie: {$smarty.cookies.wsc_Cookie_NeuWert}</li>
+        <li>Variable: {config name='wsc_Cookie_NeuWert'}</li>
+    </ul>
+    {if $smarty.cookies.wsc_Cookie_NeuWert == ''}
+        <p>IF</p>
+        <ul>
+            <li>Cookie: {$smarty.cookies.wsc_Cookie_NeuWert}</li>
+            <li>Variable: {config name='wsc_Cookie_NeuWert'}</li>
+        </ul>
+    {literal}
+        <script>
+            var date = new Date();
+            date.setTime(date.getTime() + 10 * 24 * 60 * 60 * 1000);
+            var expires = date.toUTCString();
+            // var expires = (new Date(Date.now()+ 86400*1000)).toUTCString();
+            document.cookie = "wsc_Cookie_NeuWert={/literal}{config name='wsc_Cookie_NeuWert'}{literal}; expires="{/literal} + expires + {literal}"; path=/";
+            console.log("Cookie gesetzt");
+            console.log(document.cookie);
 
+            location.reload(true);
+        </script>
+    {/literal}
+    {elseif $smarty.cookies.wsc_Cookie_NeuWert != {config name='wsc_Cookie_NeuWert'}}
+        <p>ELSE IF</p
+        <ul>
+            <li>Cookie: {$smarty.cookies.wsc_Cookie_NeuWert}</li>
+            <li>Variable: {config name='wsc_Cookie_NeuWert'}</li>
+        </ul>
+    {literal}
+        <script>
+            var date = new Date();
+            date.setTime(date.getTime() + 30 * 24 * 60 * 60 * 1000);
+            var expires = date.toUTCString();
+            // var expires = (new Date(Date.now()+ 86400*1000)).toUTCString();
+            document.cookie = "wsc_Cookie_NeuWert={/literal}{config name='wsc_Cookie_NeuWert'}{literal}; expires="{/literal} + expires + {literal}"; path=/";
+            console.log("Cookie gesetzt");
+            console.log(document.cookie);
+
+            var date = new Date();
+            date.setTime(date.getTime() - 30 * 24 * 60 * 60 * 1000);
+            var expires = date.toUTCString();
+            // var expires = (new Date(Date.now()+ 86400*1000)).toUTCString();
+            document.cookie = "cookiePreferences=; expires="{/literal} + expires + {literal}"; path=/";
+            console.log("Cookie cookiePreferences zurückgesetzt");
+            console.log(document.cookie);
+
+            location.reload(true);
+        </script>
+    {/literal}
+    {elseif $smarty.cookies.wsc_Cookie_NeuWert == {config name='wsc_Cookie_NeuWert'}}
+        <p>ELSE</p>
+        <ul>
+            <li>Cookie: {$smarty.cookies.wsc_Cookie_NeuWert}</li>
+            <li>Variable: {config name='wsc_Cookie_NeuWert'}</li>
+        </ul>
+    {/if}
     {$smarty.block.parent}
 
     {foreach $cookieGroups as $wscCookies}
-        {print_r(wscCookies)}
         {if $wscCookies.name == "technical"}
-            <h1>{$wscCookies.name}</h1>
             {foreach $wscCookies.cookies as $wscCookiesTech}
-
                 {if $wscCookiesTech.name == "wsc_Cookie_Neu"}
-                    <h2>{$wscCookiesTech.name}</h2>
-                    {$wscCookiesTech.name}
+                    <ul>
+                        <li>{$wscCookiesTech.name}</li>
+                        <li>{$wscCookiesTech|@var_dump}</li>
+                    </ul>
                 {/if}
-
             {/foreach}
-
         {/if}
-
     {/foreach}
 
 {/block}

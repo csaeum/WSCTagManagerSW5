@@ -94,15 +94,6 @@ class WSCTagManagerSW5 extends Plugin
     {
         $collection = new CookieCollection();
 
-        if (Shopware()->Config()->getByNamespace('WSCTagManagerSW5', 'wsc_Cookie_Neu')) {
-            $collection->add(new CookieStruct(
-                'Name wsc_Cookie_Neu',
-                '/^wsc_Coo - XX - kie_Neu$/',
-                'Consent Prüfung',
-                CookieGroupStruct::TECHNICAL
-            ));
-        }
-
         if (Shopware()->Config()->getByNamespace('WSCTagManagerSW5', 'wsc_Cookie_Bing')) {
             $collection->add(new CookieStruct(
                 'wsc_Cookie_Bing',
