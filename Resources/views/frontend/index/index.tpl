@@ -1,5 +1,7 @@
 {extends file="parent:frontend/index/index.tpl"}
 
+{assign var="$smarty.cookies.cookiePreferences" value=","|explode:$string}
+
 {block name='frontend_index_after_body'}
 
     {if {config name='wscTagManagerMatomo'}}
@@ -28,6 +30,9 @@
         {/literal}
         {/if}
     {/if}
+    <hr/>
+    {var_dump($smarty.cookies.cookiePreferences)}
+    <hr/>
     <ul>
         <li>VAR DUMP: {var_dump($smarty.cookies)}</li>
         <li>Cookie: {$smarty.cookies.wsc_Cookie_NeuWert}</li>
@@ -86,12 +91,25 @@
             <li>Variable: {config name='wsc_Cookie_NeuWert'}</li>
         </ul>
     {/if}
+
     {$smarty.block.parent}
 
     {foreach $cookieGroups as $wscCookies}
         {if $wscCookies.name == "technical"}
             {foreach $wscCookies.cookies as $wscCookiesTech}
                 {if $wscCookiesTech.name == "wsc_Cookie_Neu"}
+                    <ul>
+                        <li>{$wscCookiesTech.name}</li>
+                        <li>{$wscCookiesTech|@var_dump}</li>
+                    </ul>
+                {/if}
+                {if $wscCookiesTech.name == "wsc_Cookie_Google"}
+                    <ul>
+                        <li>{$wscCookiesTech.name}</li>
+                        <li>{$wscCookiesTech|@var_dump}</li>
+                    </ul>
+                {/if}
+                {if $wscCookiesTech.name == "wsc_Cookie_Matomo"}
                     <ul>
                         <li>{$wscCookiesTech.name}</li>
                         <li>{$wscCookiesTech|@var_dump}</li>

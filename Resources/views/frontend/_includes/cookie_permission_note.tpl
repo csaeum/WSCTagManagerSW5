@@ -25,19 +25,20 @@
 </style>
 
 <div class="page-wrap--cookie-permission is--hidden js--modal sizing--content"
+     style="width: 66%; height: auto; display: block; top: 33%; opacity: 1;"
      data-cookie-permission="true"
      data-urlPrefix="{url controller=index action=index}"
      data-title="{s name="cookiePermission/title"}{/s}"
-
-     style="width: 66%; height: auto; display: block; top: 33%; opacity: 1;"
-
+     data-cookieTimeout="{config name="cookieTimeout"}"
      {if $Shop}data-shopId="{$Shop->getId()}"{/if}>
 
     {if {config name="cookie_note_mode"} != 2}
         {block name="cookie_permission_container"}
             <div class="cookie-permission--container cookie-mode--{config name="cookie_note_mode"}">
+
                 {block name="cookie_permission_content"}
-                    <p class="cookie-permission--content{if {config name="cookie_note_mode"} == 1 && {config name="cookie_show_button"}} cookie-permission--extra-button{/if}">
+                    <div class="cookie-permission--content{if {config name="cookie_note_mode"} == 1 && {config name="cookie_show_button"}} cookie-permission--extra-button{/if} is--first block" style="float: left;
+width: 75%;">
                         {block name="cookie_permission_content_text"}
                             {if {config name="cookie_note_mode"} == 1}
                                 {s name="cookiePermission/textMode1"}{/s}
@@ -56,41 +57,43 @@
                                 </a>
                             {/if}
                         {/block}
-                    </p>
+                    </div>
                 {/block}
 
                 {block name="cookie_permission_accept_button"}
-                    <p class="cookie-permission--button{if {config name="cookie_note_mode"} == 1 && {config name="cookie_show_button"}} cookie-permission--extra-button{/if}">
+                    <div class="cookie-permission--button{if {config name="cookie_note_mode"} == 1 && {config name="cookie_show_button"}} cookie-permission--extra-button{/if} is--last block" style="float: right;
+width: 25%;">
+
+                        {block name="cookie_permission_accept_button_fixed"}
+                            {if {config name="cookie_note_mode"} == 1}
+                                {if {config name="cookie_show_button"}}
+                                    <a href="#" class="cookie-permission--accept-button btn is--full is--center" style="margin-right: none;">
+                                        {s name="cookiePermission/acceptAll"}{/s}
+                                    </a>
+                                {/if}
+                                <a href="#" class="cookie-permission--configure-button btn is--full is--center" data-openConsentManager="true">
+                                    {s name="cookiePermission/configure"}{/s}
+                                </a>
+                            {else}
+                                <a href="#" class="cookie-permission--accept-button btn is--full is--center">
+                                    {s name="cookiePermission/buttonText"}{/s}
+                                </a>
+                            {/if}
+                        {/block}
+
                         {block name="cookie_permission_decline_button_fixed"}
                             {if {config name="cookie_note_mode"} == 1}
                                 {block name="cookie_permission_decline_button"}
-                                    <a href="#" class="cookie-permission--decline-button btn is--large is--center">
+                                    <a href="#" class="cookie-permission--decline-button btn is--full is--center" style="margin-right: none;">
                                         {s name="cookiePermission/declineText"}{/s}
                                     </a>
                                 {/block}
                             {/if}
                         {/block}
 
-                        {block name="cookie_permission_accept_button_fixed"}
-                            {if {config name="cookie_note_mode"} == 1}
-                                <a href="#" class="cookie-permission--configure-button btn is--large is--center" data-openConsentManager="true">
-                                    {s name="cookiePermission/configure"}{/s}
-                                </a>
-
-                                {if {config name="cookie_show_button"}}
-                                    <a href="#" class="cookie-permission--accept-button btn is--primary is--large is--center">
-                                        {s name="cookiePermission/acceptAll"}{/s}
-                                    </a>
-                                {/if}
-
-                            {else}
-                                <a href="#" class="cookie-permission--accept-button btn is--large is--center">
-                                    {s name="cookiePermission/buttonText"}{/s}
-                                </a>
-                            {/if}
-                        {/block}
-                    </p>
+                    </div>
                 {/block}
+
             </div>
         {/block}
     {else}
