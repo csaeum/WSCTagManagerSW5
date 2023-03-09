@@ -67,11 +67,11 @@ width: 25%;">
                         {block name="cookie_permission_accept_button_fixed"}
                             {if {config name="cookie_note_mode"} == 1}
                                 {if {config name="cookie_show_button"}}
-                                    <a href="#" class="cookie-permission--accept-button btn is--full is--center" style="margin-right: none;">
+                                    <a href="#" class="cookie-permission--accept-button btn is--full is--center" style="margin-right: 0px;">
                                         {s name="cookiePermission/acceptAll"}{/s}
                                     </a>
                                 {/if}
-                                <a href="#" class="cookie-permission--configure-button btn is--full is--center" data-openConsentManager="true">
+                                <a href="#" class="cookie-permission--configure-button btn is--full is--center" data-openConsentManager="true" style="margin-top: 15px; margin-bottom: 15px;">
                                     {s name="cookiePermission/configure"}{/s}
                                 </a>
                             {else}
@@ -84,7 +84,7 @@ width: 25%;">
                         {block name="cookie_permission_decline_button_fixed"}
                             {if {config name="cookie_note_mode"} == 1}
                                 {block name="cookie_permission_decline_button"}
-                                    <a href="#" class="cookie-permission--decline-button btn is--full is--center" style="margin-right: none;">
+                                    <a href="#" class="cookie-permission--decline-button btn is--full is--center" style="margin-right: 0px;">
                                         {s name="cookiePermission/declineText"}{/s}
                                     </a>
                                 {/block}

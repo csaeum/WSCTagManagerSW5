@@ -43,10 +43,7 @@
     {/if}
 
     {if $smarty.cookies.wsc_Cookie_Vergleichswert === ''}
-        <ul>
-            <li>IF Cookie: {$smarty.cookies.wsc_Cookie_Vergleichswert}</li>
-            <li>IF Variable: {config name='wsc_Cookie_Vergleichswert'}</li>
-        </ul>
+
     {literal}
         <script>
             var date = new Date();
@@ -60,13 +57,11 @@
             location.reload(true);
         </script>
     {/literal}
+
     {/if}
 
     {if $smarty.cookies.wsc_Cookie_Vergleichswert != {config name='wsc_Cookie_Vergleichswert'}}
-        <ul>
-            <li>ELSE IF Cookie: {$smarty.cookies.wsc_Cookie_Vergleichswert}</li>
-            <li>ELSE IF Variable: {config name='wsc_Cookie_Vergleichswert'}</li>
-        </ul>
+
     {literal}
         <script>
             var date = new Date();
@@ -88,6 +83,7 @@
             location.reload(true);
         </script>
     {/literal}
+
     {/if}
 
     {$smarty.block.parent}
