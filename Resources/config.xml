@@ -185,12 +185,12 @@
         </element>
 
         <element scope="shop" type="text">
-            <name>wsc_Cookie_NeuWert</name>
+            <name>wsc_Cookie_Vergleichswert</name>
             <label lang="de-DE">Zahl zur Prüfung von Cookie Consent neu starten</label>
             <label lang="en-EN">Restart number to check cookie consent</label>
-            <value>XX</value>
-            <description lang="de-DE">Cookie Name: wsc_Cookie_Neu</description>
-            <description lang="en-EN">Cookie Name: wsc_Cookie_Neu</description>
+            <value>V1</value>
+            <description lang="de-DE">Cookie Name: wsc_Cookie_Vergleichswert</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Vergleichswert</description>
         </element>
 
         <element scope="shop" type="boolean">
