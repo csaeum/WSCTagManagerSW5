@@ -57,12 +57,16 @@
         </element>
 
         <element scope="shop" type="boolean">
-            <name>wscTagManagerMatomoPageIDSubdomains</name>
-            <label lang="de-DE">Alle Subdomains mit tracken</label>
-            <label lang="en-EN">Track all subdomains</label>
+            <name>wscTagManagerMatomoPageIDnoCookies</name>
+            <label lang="de-DE">Alle Tracking Cookies deaktivieren</label>
+            <label lang="en-EN">Disable all tracking cookies</label>
             <value>0</value>
-            <description lang="de-DE">Hierdurch werden Besucher, die x.ihreDomain.de und y.ihreDomain.de besuchen als eindeutige Besucher gewertet.</description>
-            <description lang="en-EN">As a result, visitors who visit x.yourdomain.de and y.yourdomain.de are counted as unique visitors.</description>
+            <description lang="de-DE">Deaktiviert alle First-Party Cookies. Bestehende Matomo Cookies für diese Webseite
+                werden beim nächsten Seitenaufruf gelöscht.
+            </description>
+            <description lang="en-EN">Disables all first-party cookies. Existing Matomo cookies for this website will be
+                deleted the next time the page is accessed.
+            </description>
         </element>
 
         <element scope="shop" type="boolean">
@@ -70,17 +74,26 @@
             <label lang="de-DE">Tracking-Anfragen nicht senden</label>
             <label lang="en-EN">Do not send tracking requests</label>
             <value>0</value>
-            <description lang="de-DE">Hierdurch werden Tracking-Anfragen nicht gesendet, falls der Benutzer nicht getrackt werden möchte. Hinweis: Diese Einstellung hat keine Auswirkung, da die Do-Not-Track Unterstützung serverseitig aktiviert ist.</description>
-            <description lang="en-EN">This will not send tracking requests if the user does not want to be tracked. Note: This setting has no effect because Do-Not-Track support is enabled on the server side.</description>
+            <description lang="de-DE">Hierdurch werden Tracking-Anfragen nicht gesendet, falls der Benutzer nicht
+                getrackt werden möchte. Hinweis: Diese Einstellung hat keine Auswirkung, da die Do-Not-Track
+                Unterstützung serverseitig aktiviert ist.
+            </description>
+            <description lang="en-EN">This will not send tracking requests if the user does not want to be tracked.
+                Note: This setting has no effect because Do-Not-Track support is enabled on the server side.
+            </description>
         </element>
 
         <element scope="shop" type="boolean">
-            <name>wscTagManagerMatomoPageIDnoCookies</name>
-            <label lang="de-DE">Alle Tracking Cookies deaktivieren</label>
-            <label lang="en-EN">Disable all tracking cookies</label>
+            <name>wscTagManagerMatomoPageIDSubdomains</name>
+            <label lang="de-DE">Alle Subdomains mit tracken</label>
+            <label lang="en-EN">Track all subdomains</label>
             <value>0</value>
-            <description lang="de-DE">Deaktiviert alle First-Party Cookies. Bestehende Matomo Cookies für diese Webseite werden beim nächsten Seitenaufruf gelöscht.</description>
-            <description lang="en-EN">Disables all first-party cookies. Existing Matomo cookies for this website will be deleted the next time the page is accessed.</description>
+            <description lang="de-DE">Hierdurch werden Besucher, die x.ihreDomain.de und y.ihreDomain.de besuchen als
+                eindeutige Besucher gewertet.
+            </description>
+            <description lang="en-EN">As a result, visitors who visit x.yourdomain.de and y.yourdomain.de are counted as
+                unique visitors.
+            </description>
         </element>
 
         <element scope="shop" type="boolean">
