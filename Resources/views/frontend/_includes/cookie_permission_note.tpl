@@ -1,7 +1,34 @@
 {namespace name="frontend/cookiepermission/index"}
 
 <style>
+    .cookie-permission--configure-button {
+        margin-top: 15px !important;
+        margin-bottom: 15px !important;
+    }
+
+    .cookie-permission--decline-button, .cookie-permission--accept-button {
+        margin-right: 0px !important;
+    }
+
+    .cookie-permission--content.is--first.block {
+        width: 100%;
+    }
+
+    .cookie-permission--button.is--last.block {
+        width: 100%;
+    }
+
     @media screen and (min-width: 64em) {
+        .cookie-permission--content.is--first.block {
+            float: left !important;
+            width: 75% !important;
+        }
+
+        .cookie-permission--button.is--last.block {
+            float: right !important;
+            width: 25% !important;
+        }
+
         .page-wrap--cookie-permission .cookie-permission--container.cookie-mode--1 .cookie-permission--content.cookie-permission--extra-button {
             width: 100%;
         }
@@ -37,8 +64,7 @@
             <div class="cookie-permission--container cookie-mode--{config name="cookie_note_mode"}">
 
                 {block name="cookie_permission_content"}
-                    <div class="cookie-permission--content{if {config name="cookie_note_mode"} == 1 && {config name="cookie_show_button"}} cookie-permission--extra-button{/if} is--first block" style="float: left;
-width: 75%;">
+                    <div class="cookie-permission--content{if {config name="cookie_note_mode"} == 1 && {config name="cookie_show_button"}} cookie-permission--extra-button{/if} is--first block">
                         {block name="cookie_permission_content_text"}
                             {if {config name="cookie_note_mode"} == 1}
                                 {s name="cookiePermission/textMode1"}{/s}
@@ -61,17 +87,16 @@ width: 75%;">
                 {/block}
 
                 {block name="cookie_permission_accept_button"}
-                    <div class="cookie-permission--button{if {config name="cookie_note_mode"} == 1 && {config name="cookie_show_button"}} cookie-permission--extra-button{/if} is--last block" style="float: right;
-width: 25%;">
+                    <div class="cookie-permission--button{if {config name="cookie_note_mode"} == 1 && {config name="cookie_show_button"}} cookie-permission--extra-button{/if} is--last block">
 
                         {block name="cookie_permission_accept_button_fixed"}
                             {if {config name="cookie_note_mode"} == 1}
                                 {if {config name="cookie_show_button"}}
-                                    <a href="#" class="cookie-permission--accept-button btn is--full is--center" style="margin-right: 0px;">
+                                    <a href="#" class="cookie-permission--accept-button btn is--full is--center">
                                         {s name="cookiePermission/acceptAll"}{/s}
                                     </a>
                                 {/if}
-                                <a href="#" class="cookie-permission--configure-button btn is--full is--center" data-openConsentManager="true" style="margin-top: 15px; margin-bottom: 15px;">
+                                <a href="#" class="cookie-permission--configure-button btn is--full is--center" data-openConsentManager="true">
                                     {s name="cookiePermission/configure"}{/s}
                                 </a>
                             {else}
@@ -84,7 +109,7 @@ width: 25%;">
                         {block name="cookie_permission_decline_button_fixed"}
                             {if {config name="cookie_note_mode"} == 1}
                                 {block name="cookie_permission_decline_button"}
-                                    <a href="#" class="cookie-permission--decline-button btn is--full is--center" style="margin-right: 0px;">
+                                    <a href="#" class="cookie-permission--decline-button btn is--full is--center">
                                         {s name="cookiePermission/declineText"}{/s}
                                     </a>
                                 {/block}
