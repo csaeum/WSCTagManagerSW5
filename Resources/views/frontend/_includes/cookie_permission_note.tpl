@@ -52,7 +52,7 @@
 </style>
 
 <div class="page-wrap--cookie-permission is--hidden js--modal sizing--content"
-     style="width: 66%; height: auto; display: block; top: 33%; opacity: 1;"
+     style="width: 66%; height: auto; display: block; top: 25%; opacity: 1;"
      data-cookie-permission="true"
      data-urlPrefix="{url controller=index action=index}"
      data-title="{s name="cookiePermission/title"}{/s}"
