@@ -14,6 +14,7 @@ TagManager für Shopware 5 der den Matomo Tag Manager sowie den Google Tag Manag
 - Matomo
 - Mautic
 - Zammad
+- PrüfCookie
 
 ### Tag Manager integration
 
