@@ -1,5 +1,10 @@
 {extends file='parent:frontend/index/header.tpl'}
 
+{block name="frontend_index_header_css_screen"}
+    {$smarty.block.parent}
+    <link rel="stylesheet" href="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent.css" media="print" onload="this.media='all'">
+{/block}
+
 {block name="frontend_index_header_meta_http_tags"}
 
     {* DataLayer aktiv *}

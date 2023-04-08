@@ -86,6 +86,13 @@
 
     {/if}
 
-    {$smarty.block.parent}
 
+
+{/block}
+
+{block name="frontend_index_javascript_async_ready"}
+    {$smarty.block.parent}
+    <button type="button" data-cc="c-settings">Cookie settings</button>
+    <script defer src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent.js"></script>
+    <script defer src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent-init.js"></script>
 {/block}
