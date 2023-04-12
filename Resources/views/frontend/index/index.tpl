@@ -1,10 +1,18 @@
 {extends file="parent:frontend/index/index.tpl"}
 
 {block name='frontend_index_after_body'}
+{**
+    cookie_show_button == Cokkie Hinweis = Ja == 1: {config name='cookie_show_button'}
+    cookie_show_button == Cokkie Hinweis = NEIN == 0: {config name='cookie_show_button'}
+
+    cookie_note_mode: {config name='cookie_note_mode'} == 1 Technisch Notwendige Cookies erlauben
+    cookie_note_mode: {config name='cookie_note_mode'} == 2 Cookies nach erlaubnis setzen
+    cookie_note_mode: {config name='cookie_note_mode'} == 0 Nur Hinweis anzeigen
+**}
 
     {assign var=wscCookie value=$smarty.cookies.cookiePreferences|json_decode:1}
 
-    {if $wscCookie.groups.statistics.cookies.wsc_Cookie_Matomo.active === true}
+    {if $wscCookie.groups.statistics.cookies.wsc_Cookie_Matomo.active === true || ( {config name='cookie_show_button'} != 1 AND {config name='cookie_note_mode'} == 1 ) }
 
         {if {config name='wscTagManagerMatomo'}}
 
@@ -24,7 +32,7 @@
 
     {/if}
 
-    {if $wscCookie.groups.statistics.cookies.wsc_Cookie_Google.active === true}
+    {if $wscCookie.groups.statistics.cookies.wsc_Cookie_Google.active === true || ( {config name='cookie_show_button'} != 1 AND {config name='cookie_note_mode'} == 1 ) }
 
         {if {config name='wscTagManagerGoogle'}}
 
@@ -92,7 +100,14 @@
 
 {block name="frontend_index_javascript_async_ready"}
     {$smarty.block.parent}
-    <button type="button" data-cc="c-settings">Cookie settings</button>
-    <script defer src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent.js"></script>
-    <script defer src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent-init.js"></script>
+    {if {config name='wscTagManagerConsentManagerOrestbida'}}
+        <script defer
+                src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent.js"></script>
+        <script>
+            {include file="frontend/orestbida-cookieconsent/frontend/orestbida-cookieconsent/cookieconsent-init.js.tpl"}
+        </script>
+    {/if}
+    {**
+        <script defer src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent-init.js"></script>
+    **}
 {/block}

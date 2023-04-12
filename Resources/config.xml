@@ -2,13 +2,26 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
     <elements>
 
+        <element type="text">
+            <name>wscTagManagerMatomo-TEXT</name>
+            <label lang="de">Matomo Einstellungen</label>
+            <label lang="en">Matomo Configs</label>
+            <options>
+                <readOnly>true</readOnly>
+            </options>
+        </element>
+
         <element scope="shop" type="boolean">
             <name>wscTagManagerMatomo</name>
             <label lang="de-DE">Matomo Allgemein aktivieren</label>
             <label lang="en-EN">Turn on Matomo General</label>
             <value>0</value>
-            <description lang="de-DE">Soll Matomo generell geladen werden. So kann man es auch mal abschalten ohne die Einstellungen zu verlieren</description>
-            <description lang="en-EN">Should Matomo generally be loaded. So you can switch it off without losing the settings</description>
+            <description lang="de-DE">Soll Matomo generell geladen werden. So kann man es auch mal abschalten ohne die
+                Einstellungen zu verlieren
+            </description>
+            <description lang="en-EN">Should Matomo generally be loaded. So you can switch it off without losing the
+                settings
+            </description>
         </element>
 
         <element scope="shop" type="text">
@@ -96,13 +109,26 @@
             </description>
         </element>
 
+        <element type="text">
+            <name>wscTagManagerGoogle-TEXT</name>
+            <label lang="de">Google Einstellungen</label>
+            <label lang="en">Google Configs</label>
+            <options>
+                <readOnly>true</readOnly>
+            </options>
+        </element>
+
         <element scope="shop" type="boolean">
             <name>wscTagManagerGoogle</name>
             <label lang="de-DE">Google Allgemein aktivieren</label>
             <label lang="en-EN">Turn on Google General</label>
             <value>0</value>
-            <description lang="de-DE">Soll der Google generell geladen werden. So kann man es auch mal abschalten ohne die Einstellungen zu verlieren</description>
-            <description lang="en-EN">ShouShould the Google generally be loaded. So you can switch it off without losing the settings</description>
+            <description lang="de-DE">Soll der Google generell geladen werden. So kann man es auch mal abschalten ohne
+                die Einstellungen zu verlieren
+            </description>
+            <description lang="en-EN">ShouShould the Google generally be loaded. So you can switch it off without losing
+                the settings
+            </description>
         </element>
 
         <element scope="shop" type="boolean">
@@ -164,8 +190,18 @@
             <label lang="de-DE">Google Analytics IP Anonymisierung</label>
             <label lang="en-EN">Google Analytics IP anonymization</label>
             <value>0</value>
-            <description lang="de-DE">(Empfohlen!) Aktivieren um die IP Adresse des Besuchers zu verschleiern</description>
+            <description lang="de-DE">(Empfohlen!) Aktivieren um die IP Adresse des Besuchers zu verschleiern
+            </description>
             <description lang="en-EN">(Recommended!) Enable to disguise the visitor's IP address</description>
+        </element>
+
+        <element type="text">
+            <name>wscTagManagerDataLayer-TEXT</name>
+            <label lang="de">DataLayer Einstellungen</label>
+            <label lang="en">DataLayer Configs</label>
+            <options>
+                <readOnly>true</readOnly>
+            </options>
         </element>
 
         <element scope="shop" type="boolean">
@@ -197,6 +233,33 @@
             </description>
         </element>
 
+        <element type="text">
+            <name>wscTagManagerOrestbida-TEXT</name>
+            <label lang="de">Orestbida Consent Manager</label>
+            <label lang="en">Orestbida Consent Manager</label>
+            <options>
+                <readOnly>true</readOnly>
+            </options>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerConsentManagerOrestbida</name>
+            <label lang="de-DE">Consent Manager Orestbida nutzen</label>
+            <label lang="en-EN">Consent Manager Orestbida nutzen</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Vergleichswert</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManager_Cookie_Pruefung</name>
+            <label lang="de-DE">Prüfung um den Cookie Consent neu starten</label>
+            <label lang="en-EN">Restart to check cookie consent</label>
+            <value>0</value>
+            <description lang="de-DE">Hier eine neue Zahl eintragen um das Cookie Consent neu zu starten</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Vergleichswert</description>
+        </element>
+
         <element scope="shop" type="text">
             <name>wsc_Cookie_Vergleichswert</name>
             <label lang="de-DE">Zahl zur Prüfung von Cookie Consent neu starten</label>
@@ -204,6 +267,15 @@
             <value>V1</value>
             <description lang="de-DE">Cookie Name: wsc_Cookie_Vergleichswert</description>
             <description lang="en-EN">Cookie Name: wsc_Cookie_Vergleichswert</description>
+        </element>
+
+        <element type="text">
+            <name>wscTagManagerCookies-TEXT</name>
+            <label lang="de">Cookies Einstellungen</label>
+            <label lang="en">Cookies Configs</label>
+            <options>
+                <readOnly>true</readOnly>
+            </options>
         </element>
 
         <element scope="shop" type="boolean">

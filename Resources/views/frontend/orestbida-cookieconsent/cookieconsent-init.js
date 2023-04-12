@@ -34,19 +34,288 @@ cc.run({
 
     onFirstAction: function (user_preferences, cookie) {
         console.log('onFirstAction fired');
+        if (cc.allowedCategory('technisch')) {
+            _mtm.push({
+                'event': 'consent_technisch',
+                'consent_technisch': {
+                    'technisch': 'active',
+                }
+            });
+            dataLayer.push({
+                'event': 'consent_technisch',
+                'consent_technisch': {
+                    'technisch': 'active',
+                }
+            });
+        } else {
+            _mtm.push({
+                'event': 'consent_technisch',
+                'consent_technisch': {
+                    'technisch': 'denied',
+                }
+            });
+            dataLayer.push({
+                'event': 'consent_technisch',
+                'consent_technisch': {
+                    'technisch': 'denied',
+                }
+            });
+        }
+        if (cc.allowedCategory('komfort')) {
+            _mtm.push({
+                'event': 'consent_komfort',
+                'consent_komfort': {
+                    'komfort': 'active',
+                }
+            });
+            dataLayer.push({
+                'event': 'consent_komfort',
+                'consent_komfort': {
+                    'komfort': 'active',
+                }
+            });
+        } else {
+            _mtm.push({
+                'event': 'consent_komfort',
+                'consent_komfort': {
+                    'komfort': 'active',
+                }
+            });
+            dataLayer.push({
+                'event': 'consent_komfort',
+                'consent_komfort': {
+                    'komfort': 'denied',
+                }
+            });
+        }
+        if (cc.allowedCategory('matomo_analytics')) {
+            _mtm.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'active'
+            });
+            dataLayer.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'active'
+            });
+        } else {
+            _mtm.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'denied'
+            });
+            dataLayer.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'denied'
+            });
+        }
+        if (cc.allowedCategory('google_analytics')) {
+            _mtm.push({
+                'event': 'consent_google',
+                'consent_google': 'active'
+            });
+            dataLayer.push({
+                'event': 'consent_google',
+                'consent_google': 'active'
+            });
+        } else {
+            _mtm.push({
+                'event': 'consent_google',
+                'consent_google': 'denied'
+            });
+            dataLayer.push({
+                'event': 'consent_google',
+                'consent_google': 'denied'
+            });
+        }
     },
 
     onAccept: function (cookie) {
         console.log('onAccept fired!')
+        if (cc.allowedCategory('technisch')) {
+            _mtm.push({
+                'event': 'consent_technisch',
+                'consent_technisch': {
+                    'technisch': 'active',
+                }
+            });
+            dataLayer.push({
+                'event': 'consent_technisch',
+                'consent_technisch': {
+                    'technisch': 'active',
+                }
+            });
+        } else {
+            _mtm.push({
+                'event': 'consent_technisch',
+                'consent_technisch': {
+                    'technisch': 'denied',
+                }
+            });
+            dataLayer.push({
+                'event': 'consent_technisch',
+                'consent_technisch': {
+                    'technisch': 'denied',
+                }
+            });
+        }
+        if (cc.allowedCategory('komfort')) {
+            _mtm.push({
+                'event': 'consent_komfort',
+                'consent_komfort': {
+                    'komfort': 'active',
+                }
+            });
+            dataLayer.push({
+                'event': 'consent_komfort',
+                'consent_komfort': {
+                    'komfort': 'active',
+                }
+            });
+        } else {
+            _mtm.push({
+                'event': 'consent_komfort',
+                'consent_komfort': {
+                    'komfort': 'active',
+                }
+            });
+            dataLayer.push({
+                'event': 'consent_komfort',
+                'consent_komfort': {
+                    'komfort': 'denied',
+                }
+            });
+        }
+        if (cc.allowedCategory('matomo_analytics')) {
+            _mtm.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'active'
+            });
+            dataLayer.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'active'
+            });
+        } else {
+            _mtm.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'denied'
+            });
+            dataLayer.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'denied'
+            });
+        }
+        if (cc.allowedCategory('google_analytics')) {
+            _mtm.push({
+                'event': 'consent_google',
+                'consent_google': 'active'
+            });
+            dataLayer.push({
+                'event': 'consent_google',
+                'consent_google': 'active'
+            });
+        } else {
+            _mtm.push({
+                'event': 'consent_google',
+                'consent_google': 'denied'
+            });
+            dataLayer.push({
+                'event': 'consent_google',
+                'consent_google': 'denied'
+            });
+        }
     },
 
     onChange: function (cookie, changed_preferences) {
         console.log('onChange fired!');
-
-        // If analytics category is disabled => disable google analytics
-        if (!cc.allowedCategory('analytics')) {
-            typeof gtag === 'function' && gtag('consent', 'update', {
-                'analytics_storage': 'denied'
+        if (cc.allowedCategory('technisch')) {
+            _mtm.push({
+                'event': 'consent_technisch',
+                'consent_technisch': {
+                    'technisch': 'active',
+                }
+            });
+            dataLayer.push({
+                'event': 'consent_technisch',
+                'consent_technisch': {
+                    'technisch': 'active',
+                }
+            });
+        } else {
+            _mtm.push({
+                'event': 'consent_technisch',
+                'consent_technisch': {
+                    'technisch': 'denied',
+                }
+            });
+            dataLayer.push({
+                'event': 'consent_technisch',
+                'consent_technisch': {
+                    'technisch': 'denied',
+                }
+            });
+        }
+        if (cc.allowedCategory('komfort')) {
+            _mtm.push({
+                'event': 'consent_komfort',
+                'consent_komfort': {
+                    'komfort': 'active',
+                }
+            });
+            dataLayer.push({
+                'event': 'consent_komfort',
+                'consent_komfort': {
+                    'komfort': 'active',
+                }
+            });
+        } else {
+            _mtm.push({
+                'event': 'consent_komfort',
+                'consent_komfort': {
+                    'komfort': 'active',
+                }
+            });
+            dataLayer.push({
+                'event': 'consent_komfort',
+                'consent_komfort': {
+                    'komfort': 'denied',
+                }
+            });
+        }
+        if (cc.allowedCategory('matomo_analytics')) {
+            _mtm.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'active'
+            });
+            dataLayer.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'active'
+            });
+        } else {
+            _mtm.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'denied'
+            });
+            dataLayer.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'denied'
+            });
+        }
+        if (cc.allowedCategory('google_analytics')) {
+            _mtm.push({
+                'event': 'consent_google',
+                'consent_google': 'active'
+            });
+            dataLayer.push({
+                'event': 'consent_google',
+                'consent_google': 'active'
+            });
+        } else {
+            _mtm.push({
+                'event': 'consent_google',
+                'consent_google': 'denied'
+            });
+            dataLayer.push({
+                'event': 'consent_google',
+                'consent_google': 'denied'
             });
         }
     },
@@ -97,38 +366,38 @@ cc.run({
                         cookie_table: [
                             {
                                 col1: '^__csrf_token',
-                                col2: 'www.schicker-mineral.de.com',
+                                col2: 'www.schicker-mineral.de',
                                 col3: 'Sitzungsende',
                                 col4: 'Shopware eigenes Cookie um die Verwendung abzusichern',
                                 is_regex: true
                             },
                             {
                                 col1: 'cookiePreferences-1',
-                                col2: 'www.schicker-mineral.de.com',
+                                col2: 'www.schicker-mineral.de',
                                 col3: '182 Tage',
                                 col4: 'Shopware eigenes Cookie mit den Einstellungen des CookieBanners',
                             },
                             {
                                 col1: 'nocache-1',
-                                col2: 'www.schicker-mineral.de.com',
+                                col2: 'www.schicker-mineral.de',
                                 col3: 'Sitzungsende',
                                 col4: 'Shopware eigenes Cookie ob Cache verwendet wird',
                             },
                             {
                                 col1: 'PHPSESSID',
-                                col2: 'www.schicker-mineral.de.com',
+                                col2: 'www.schicker-mineral.de',
                                 col3: 'Sitzungsende',
                                 col4: 'Shopware eigenes Cookie um den Kunden zu erkennen und abzusichern',
                             },
                             {
                                 col1: 'session-1',
-                                col2: 'www.schicker-mineral.de.com',
+                                col2: 'www.schicker-mineral.de',
                                 col3: 'Sitzungsende',
                                 col4: 'Shopware eigenes Cookie um den Kunden zu erkennen und abzusichern',
                             },
                             {
                                 col1: 'x-ua-device',
-                                col2: 'www.schicker-mineral.de.com',
+                                col2: 'www.schicker-mineral.de',
                                 col3: 'Sitzungsende',
                                 col4: 'Shopware eigenes Cookie welches Gerät der User verwendet',
                             }
@@ -144,13 +413,13 @@ cc.run({
                         cookie_table: [
                             {
                                 col1: '---',
-                                col2: 'livechat.schicker-mineral.de.com',
+                                col2: 'livechat.schicker-mineral.de',
                                 col3: '---',
                                 col4: 'Unser eigener Zammad Live-Chat',
                             },
                             {
                                 col1: '---',
-                                col2: 'news.schicker-mineral.de.com',
+                                col2: 'news.schicker-mineral.de',
                                 col3: '---',
                                 col4: 'Unser eigenes Mautic Newsletter Tool',
                             }
