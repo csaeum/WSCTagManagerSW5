@@ -2,11 +2,13 @@
 
 {block name="frontend_index_header_css_screen"}
     {$smarty.block.parent}
-    {if {config name='wscTagManagerConsentManagerOrestbida'}}
+
+    {if {config name='wscTagManagerConsentManagerOrestbida'} === '1'}
         <link rel="stylesheet"
               href="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent.css"
               media="print" onload="this.media='all'">
     {/if}
+
 {/block}
 
 {block name="frontend_index_header_meta_http_tags"}

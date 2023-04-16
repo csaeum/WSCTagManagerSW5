@@ -50,64 +50,66 @@
 
     {/if}
 
-    {if $smarty.cookies.wsc_Cookie_Vergleichswert === ''}
+    {if {config name='wscTagManager_Cookie_Pruefung'} === '1' AND {config name='wscTagManagerConsentManagerOrestbida'} === ''}
 
-    {literal}
-        <script>
-            var date = new Date();
-            date.setTime(date.getTime() + 10 * 24 * 60 * 60 * 1000);
-            var expires = date.toUTCString();
-            // var expires = (new Date(Date.now()+ 86400*1000)).toUTCString();
-            document.cookie = "wsc_Cookie_Vergleichswert={/literal}{config name='wsc_Cookie_Vergleichswert'}{literal}; expires="{/literal} + expires + {literal}"; path=/";
-            console.log("Cookie gesetzt");
-            console.log(document.cookie);
+        {if $smarty.cookies.wsc_Cookie_Vergleichswert === ''}
 
-            location.reload(true);
-        </script>
-    {/literal}
+        {literal}
+            <script>
+                var date = new Date();
+                date.setTime(date.getTime() + 10 * 24 * 60 * 60 * 1000);
+                var expires = date.toUTCString();
+                // var expires = (new Date(Date.now()+ 86400*1000)).toUTCString();
+                document.cookie = "wsc_Cookie_Vergleichswert={/literal}{config name='wsc_Cookie_Vergleichswert'}{literal}; expires="{/literal} + expires + {literal}"; path=/";
+                console.log("Cookie gesetzt");
+                console.log(document.cookie);
+
+                location.reload(true);
+            </script>
+        {/literal}
+
+        {/if}
+
+        {if $smarty.cookies.wsc_Cookie_Vergleichswert != {config name='wsc_Cookie_Vergleichswert'}}
+
+        {literal}
+            <script>
+                var date = new Date();
+                date.setTime(date.getTime() + 30 * 24 * 60 * 60 * 1000);
+                var expires = date.toUTCString();
+                // var expires = (new Date(Date.now()+ 86400*1000)).toUTCString();
+                document.cookie = "wsc_Cookie_Vergleichswert={/literal}{config name='wsc_Cookie_Vergleichswert'}{literal}; expires="{/literal} + expires + {literal}"; path=/";
+                console.log("Cookie gesetzt");
+                console.log(document.cookie);
+
+                var date = new Date();
+                date.setTime(date.getTime() - 30 * 24 * 60 * 60 * 1000);
+                var expires = date.toUTCString();
+                // var expires = (new Date(Date.now()+ 86400*1000)).toUTCString();
+                document.cookie = "cookiePreferences=; expires="{/literal} + expires + {literal}"; path=/";
+                console.log("Cookie cookiePreferences zurückgesetzt");
+                console.log(document.cookie);
+
+                location.reload(true);
+            </script>
+        {/literal}
+
+        {/if}
 
     {/if}
-
-    {if $smarty.cookies.wsc_Cookie_Vergleichswert != {config name='wsc_Cookie_Vergleichswert'}}
-
-    {literal}
-        <script>
-            var date = new Date();
-            date.setTime(date.getTime() + 30 * 24 * 60 * 60 * 1000);
-            var expires = date.toUTCString();
-            // var expires = (new Date(Date.now()+ 86400*1000)).toUTCString();
-            document.cookie = "wsc_Cookie_Vergleichswert={/literal}{config name='wsc_Cookie_Vergleichswert'}{literal}; expires="{/literal} + expires + {literal}"; path=/";
-            console.log("Cookie gesetzt");
-            console.log(document.cookie);
-
-            var date = new Date();
-            date.setTime(date.getTime() - 30 * 24 * 60 * 60 * 1000);
-            var expires = date.toUTCString();
-            // var expires = (new Date(Date.now()+ 86400*1000)).toUTCString();
-            document.cookie = "cookiePreferences=; expires="{/literal} + expires + {literal}"; path=/";
-            console.log("Cookie cookiePreferences zurückgesetzt");
-            console.log(document.cookie);
-
-            location.reload(true);
-        </script>
-    {/literal}
-
-    {/if}
-
-
 
 {/block}
 
 {block name="frontend_index_javascript_async_ready"}
+
     {$smarty.block.parent}
-    {if {config name='wscTagManagerConsentManagerOrestbida'}}
+
+    {if {config name='wscTagManagerConsentManagerOrestbida'} === '1'}
         <script defer
                 src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent.js"></script>
         <script>
-            {include file="frontend/orestbida-cookieconsent/frontend/orestbida-cookieconsent/cookieconsent-init.js.tpl"}
+            {include file="frontend/orestbida-cookieconsent/cookieconsent-init.js.tpl"}
         </script>
     {/if}
-    {**
-        <script defer src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent-init.js"></script>
-    **}
+
 {/block}

@@ -9,12 +9,16 @@ TagManager für Shopware 5 der den Matomo Tag Manager sowie den Google Tag Manag
 - Bing
 - Clarity
 - Facebook
-- Google
+- Google Analytics / Tag Manager
+- Google AdWords
 - Hotjar
-- Matomo
+- Instagram
+- Matomo Analytics / Tag Manager
 - Mautic
+- Pinterest
+- YouTube
 - Zammad
-- PrüfCookie
+- Prüf-Cookie
 
 ### Tag Manager integration
 

@@ -2,12 +2,14 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../engine/Shopware/Components/Plugin/schema/config.xsd">
     <elements>
 
-        <element type="text">
+        <element type="button">
             <name>wscTagManagerMatomo-TEXT</name>
             <label lang="de">Matomo Einstellungen</label>
             <label lang="en">Matomo Configs</label>
             <options>
-                <readOnly>true</readOnly>
+                <style>width:100%; max-width:100%; min-width: 10px; background: none; border: 1px #000000 dashed;
+                    margin:20px 0 20px 0;
+                </style>
             </options>
         </element>
 
@@ -109,12 +111,14 @@
             </description>
         </element>
 
-        <element type="text">
+        <element type="button">
             <name>wscTagManagerGoogle-TEXT</name>
             <label lang="de">Google Einstellungen</label>
             <label lang="en">Google Configs</label>
             <options>
-                <readOnly>true</readOnly>
+                <style>width:100%; max-width:100%; min-width: 10px; background: none; border: 1px #000000 dashed;
+                    margin:20px 0 20px 0;
+                </style>
             </options>
         </element>
 
@@ -195,12 +199,14 @@
             <description lang="en-EN">(Recommended!) Enable to disguise the visitor's IP address</description>
         </element>
 
-        <element type="text">
+        <element type="button">
             <name>wscTagManagerDataLayer-TEXT</name>
             <label lang="de">DataLayer Einstellungen</label>
             <label lang="en">DataLayer Configs</label>
             <options>
-                <readOnly>true</readOnly>
+                <style>width:100%; max-width:100%; min-width: 10px; background: none; border: 1px #000000 dashed;
+                    margin:20px 0 20px 0;
+                </style>
             </options>
         </element>
 
@@ -233,12 +239,14 @@
             </description>
         </element>
 
-        <element type="text">
+        <element type="button">
             <name>wscTagManagerOrestbida-TEXT</name>
             <label lang="de">Orestbida Consent Manager</label>
             <label lang="en">Orestbida Consent Manager</label>
             <options>
-                <readOnly>true</readOnly>
+                <style>width:100%; max-width:100%; min-width: 10px; background: none; border: 1px #000000 dashed;
+                    margin:20px 0 20px 0;
+                </style>
             </options>
         </element>
 
@@ -249,6 +257,17 @@
             <value>0</value>
             <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
             <description lang="en-EN">Cookie Name: wsc_Cookie_Vergleichswert</description>
+        </element>
+
+        <element type="button">
+            <name>wscTagManager_Cookie_Pruefung-TEXT</name>
+            <label lang="de">Cookie Prüfung</label>
+            <label lang="en">Cookie Prüfung</label>
+            <options>
+                <style>width:100%; max-width:100%; min-width: 10px; background: none; border: 1px #000000 dashed;
+                    margin:20px 0 20px 0;
+                </style>
+            </options>
         </element>
 
         <element scope="shop" type="boolean">
@@ -269,12 +288,14 @@
             <description lang="en-EN">Cookie Name: wsc_Cookie_Vergleichswert</description>
         </element>
 
-        <element type="text">
+        <element type="button">
             <name>wscTagManagerCookies-TEXT</name>
             <label lang="de">Cookies Einstellungen</label>
             <label lang="en">Cookies Configs</label>
             <options>
-                <readOnly>true</readOnly>
+                <style>width:100%; max-width:100%; min-width: 10px; background: none; border: 1px #000000 dashed;
+                    margin:20px 0 20px 0;
+                </style>
             </options>
         </element>
 
