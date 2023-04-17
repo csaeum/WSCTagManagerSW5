@@ -51,7 +51,7 @@
 
     {/if}
 
-    {if {config name='wscTagManager_Cookie_Pruefung'} === '1' AND {config name='wscTagManagerConsentManagerOrestbida'} === ''}
+    {if {config name='wscTagManager_Cookie_Pruefung'} === '1' AND {config name='wscTagManagerConsentManagerOrestbida'} != '1'}
 
         {if $smarty.cookies.wsc_Cookie_Vergleichswert === ''}
 
@@ -62,7 +62,7 @@
                 var expires = date.toUTCString();
                 // var expires = (new Date(Date.now()+ 86400*1000)).toUTCString();
                 document.cookie = "wsc_Cookie_Vergleichswert={/literal}{config name='wsc_Cookie_Vergleichswert'}{literal}; expires="{/literal} + expires + {literal}"; path=/";
-                console.log("Cookie gesetzt");
+                console.log("wsc_Cookie_Vergleichswert gesetzt");
                 console.log(document.cookie);
 
                 location.reload(true);
@@ -80,7 +80,7 @@
                 var expires = date.toUTCString();
                 // var expires = (new Date(Date.now()+ 86400*1000)).toUTCString();
                 document.cookie = "wsc_Cookie_Vergleichswert={/literal}{config name='wsc_Cookie_Vergleichswert'}{literal}; expires="{/literal} + expires + {literal}"; path=/";
-                console.log("Cookie gesetzt");
+                console.log("wsc_Cookie_Vergleichswert neu gesetzt");
                 console.log(document.cookie);
 
                 var date = new Date();
@@ -106,8 +106,7 @@
     {$smarty.block.parent}
 
     {if {config name='wscTagManagerConsentManagerOrestbida'} === '1'}
-        <script defer
-                src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent.js"></script>
+        <script defer src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent.js"></script>
         <script>
             {include file="frontend/orestbida-cookieconsent/cookieconsent-init.js.tpl"}
         </script>

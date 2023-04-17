@@ -73,8 +73,8 @@
 
         <element scope="shop" type="boolean">
             <name>wscTagManagerMatomoPageIDnoCookies</name>
-            <label lang="de-DE">Alle Tracking Cookies deaktivieren</label>
-            <label lang="en-EN">Disable all tracking cookies</label>
+            <label lang="de-DE">Alle Tracking Cookies deaktivieren für Matomo Seiten ID</label>
+            <label lang="en-EN">Disable all tracking cookies for Matomo Page ID</label>
             <value>0</value>
             <description lang="de-DE">Deaktiviert alle First-Party Cookies. Bestehende Matomo Cookies für diese Webseite
                 werden beim nächsten Seitenaufruf gelöscht.

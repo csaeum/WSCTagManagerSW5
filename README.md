@@ -4,6 +4,10 @@ TagManager für Shopware 5 der den Matomo Tag Manager sowie den Google Tag Manag
 
 ## Folgende weitere Features sind mit integriert.
 
+### Eigener ConsentManager der den von Shopware ersetzt
+
+- Orestbida Cookieconsent
+
 ### Cookies werden im Consent Tool des Shop registriert
 
 - Bing

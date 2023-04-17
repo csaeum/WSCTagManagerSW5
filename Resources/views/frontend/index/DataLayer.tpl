@@ -11,7 +11,7 @@
 {* Produkt View item List - Kategorieseite ENDE *}
 
 {if $Controller1 === 'index'}
-    Start Seite
+    Start Seited
 {/if}
 
 {if $Controller1 === 'note'}
