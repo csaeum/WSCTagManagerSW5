@@ -1,18 +1,19 @@
 {extends file="parent:frontend/index/index.tpl"}
 
 {block name='frontend_index_after_body'}
-{**
-    cookie_show_button == Cokkie Hinweis = Ja == 1: {config name='cookie_show_button'}
-    cookie_show_button == Cokkie Hinweis = NEIN == 0: {config name='cookie_show_button'}
 
-    cookie_note_mode: {config name='cookie_note_mode'} == 1 Technisch Notwendige Cookies erlauben
-    cookie_note_mode: {config name='cookie_note_mode'} == 2 Cookies nach erlaubnis setzen
+{**
+    cookie_show_button {config name='cookie_show_button'} == Cokkie Hinweis = Ja == 1<br />
+    cookie_show_button {config name='cookie_show_button'} == Cokkie Hinweis = NEIN == 0<br />
+    <br />
+    cookie_note_mode: {config name='cookie_note_mode'} == 1 Technisch Notwendige Cookies erlauben<br />
+    cookie_note_mode: {config name='cookie_note_mode'} == 2 Cookies nach erlaubnis setzen<br />
     cookie_note_mode: {config name='cookie_note_mode'} == 0 Nur Hinweis anzeigen
 **}
 
     {assign var=wscCookie value=$smarty.cookies.cookiePreferences|json_decode:1}
 
-    {if $wscCookie.groups.statistics.cookies.wsc_Cookie_Matomo.active === true || ( {config name='cookie_show_button'} != 1 AND {config name='cookie_note_mode'} == 1 ) }
+    {if $wscCookie.groups.statistics.cookies.wsc_Cookie_Matomo.active === true || ( {config name='cookie_show_button'} != 1 AND {config name='cookie_note_mode'} == 1 ) || ( {config name='wscTagManagerConsentManagerOrestbida'} == 1 ) }
 
         {if {config name='wscTagManagerMatomo'}}
 
@@ -32,7 +33,7 @@
 
     {/if}
 
-    {if $wscCookie.groups.statistics.cookies.wsc_Cookie_Google.active === true || ( {config name='cookie_show_button'} != 1 AND {config name='cookie_note_mode'} == 1 ) }
+    {if $wscCookie.groups.statistics.cookies.wsc_Cookie_Google.active === true || ( {config name='cookie_show_button'} != 1 AND {config name='cookie_note_mode'} == 1 ) || ( {config name='wscTagManagerConsentManagerOrestbida'} == 1 ) }
 
         {if {config name='wscTagManagerGoogle'}}
 
