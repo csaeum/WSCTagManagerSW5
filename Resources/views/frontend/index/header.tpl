@@ -8,64 +8,23 @@
               href="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent.css"
               media="print" onload="this.media='all'">
     {/if}
+    <style>
+        #c-s-bn {
+            background: var(--cc-btn-primary-bg);
+            color: var(--cc-btn-primary-text);
+        }
 
-{/block}
-
-{block name="frontend_index_header_meta_http_tags"}
-
-    {* DataLayer aktiv *}
-    {if {config name='wscTagManagerDataLayer'}}
-
-        {* DataLayer Matomo *}
-        {if {config name='wscTagManagerDataLayerMatomo'}}
-
-            {* ANFANG des Kopfes *}
-            {literal}
-                <script>
-                    window._mtm = window._mtm || [];
-                    window._mtm.push({ ecommerce: null });
-                    window._mtm.push({
-            {/literal}
-            {* ENDE des Kopfes *}
-
-                {include file="frontend/index/DataLayer.tpl"}
-
-            {* ANFANG des Fußes *}
-            {literal}
-                    });
-                </script>
-            {/literal}
-            {* ENDE des Fußes *}
-
-        {/if}
-
-        {* DataLayer Google *}
-        {if {config name='wscTagManagerDataLayerGoogle'}}
-
-            {* ANFANG des Kopfes *}
-            {literal}
-                <script>
-                    window.dataLayer = window.dataLayer || [];
-                    window.dataLayer.push({ ecommerce: null });
-                    window.dataLayer.push({
-            {/literal}
-            {* ENDE des Kopfes *}
-
-                {include file="frontend/index/DataLayer.tpl"}
-
-            {* ANFANG des Fußes *}
-            {literal}
-                    });
-                </script>
-            {/literal}
-            {* ENDE des Fußes *}
-
-        {/if}
-
-    {/if}
-
-    {$smarty.block.parent}
-
+        #wsc-cookie {
+            background: var(--cc-btn-primary-bg);
+            color: var(--cc-btn-primary-text);
+            flex: 1;
+            font-size: .82em;
+            padding: 1em 1.7em;
+            font-weight: 600;
+            transition: background-color .25s ease !important;
+            margin: 0px auto;
+        }
+    </style>
 {/block}
 
 {block name="frontend_index_header_javascript_tracking"}
@@ -88,6 +47,7 @@
                     g.async = true;
                     g.src = '{/literal}{config name='wscTagManagerMatomoURL'}{literal}/js/container_{/literal}{config name='wscTagManagerMatomoTMID'}{literal}.js';
                     s.parentNode.insertBefore(g, s);
+
 
 
                 </script>

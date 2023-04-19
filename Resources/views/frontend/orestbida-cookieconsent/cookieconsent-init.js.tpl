@@ -10,7 +10,7 @@ window.addEventListener('load', function () {
     cookie_expiration: 8,
     cookie_name: 'cc_cookie',
     current_lang: 'de',
-    delay: 250,
+    delay: 0,
     force_consent: true,
     hide_from_bots: true,
     mode: 'opt-in',
@@ -48,60 +48,47 @@ window.addEventListener('load', function () {
 
   onFirstAction: function (user_preferences, cookie) {
     console.log('onFirstAction fired');
+
     if (cc.allowedCategory('technisch')) {
       _mtm.push({
         'event': 'consent_technisch',
-        'consent_technisch': {
-          'technisch': 'active',
-        }
+        'consent_technisch': 'active'
       });
       dataLayer.push({
         'event': 'consent_technisch',
-        'consent_technisch': {
-          'technisch': 'active',
-        }
+        'consent_technisch': 'active'
       });
     } else {
       _mtm.push({
         'event': 'consent_technisch',
-        'consent_technisch': {
-          'technisch': 'denied',
-        }
+        'consent_technisch': 'denied'
       });
       dataLayer.push({
         'event': 'consent_technisch',
-        'consent_technisch': {
-          'technisch': 'denied',
-        }
+        'consent_technisch': 'denied'
       });
     }
+
     if (cc.allowedCategory('komfort')) {
       _mtm.push({
         'event': 'consent_komfort',
-        'consent_komfort': {
-          'komfort': 'active',
-        }
+        'consent_komfort': 'active'
       });
       dataLayer.push({
         'event': 'consent_komfort',
-        'consent_komfort': {
-          'komfort': 'active',
-        }
+        'consent_komfort': 'active'
       });
     } else {
       _mtm.push({
         'event': 'consent_komfort',
-        'consent_komfort': {
-          'komfort': 'active',
-        }
+        'consent_komfort': 'denied'
       });
       dataLayer.push({
         'event': 'consent_komfort',
-        'consent_komfort': {
-          'komfort': 'denied',
-        }
+        'consent_komfort': 'denied'
       });
     }
+
     if (cc.allowedCategory('matomo_analytics')) {
       _mtm.push({
         'event': 'consent_matomo',
@@ -121,6 +108,7 @@ window.addEventListener('load', function () {
         'consent_matomo': 'denied'
       });
     }
+
     if (cc.allowedCategory('google_analytics')) {
       _mtm.push({
         'event': 'consent_google',
@@ -140,65 +128,233 @@ window.addEventListener('load', function () {
         'consent_google': 'denied'
       });
     }
+
+    if (cc.allowedCategory('bing_targeting')) {
+      _mtm.push({
+        'event': 'consent_bing',
+        'consent_bing': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_bing',
+        'consent_bing': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_bing',
+        'consent_bing': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_bing',
+        'consent_bing': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('clarity_usability')) {
+      _mtm.push({
+        'event': 'consent_clarity',
+        'consent_clarity': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_clarity',
+        'consent_clarity': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_clarity',
+        'consent_clarity': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_clarity',
+        'consent_clarity': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('facebook_targeting')) {
+      _mtm.push({
+        'event': 'consent_facebook',
+        'consent_facebook': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_facebook',
+        'consent_facebook': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_facebook',
+        'consent_facebook': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_facebook',
+        'consent_facebook': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('adwords_targeting')) {
+      _mtm.push({
+        'event': 'consent_adwords',
+        'consent_adwords': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_adwords',
+        'consent_adwords': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_adwords',
+        'consent_adwords': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_adwords',
+        'consent_adwords': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('hotjar_usability')) {
+      _mtm.push({
+        'event': 'consent_hotjar',
+        'consent_hotjar': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_hotjar',
+        'consent_hotjar': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_hotjar',
+        'consent_hotjar': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_hotjar',
+        'consent_hotjar': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('instagram_targeting')) {
+      _mtm.push({
+        'event': 'consent_instagram',
+        'consent_instagram': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_instagram',
+        'consent_instagram': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_instagram',
+        'consent_instagram': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_instagram',
+        'consent_instagram': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('pinterest_targeting')) {
+      _mtm.push({
+        'event': 'consent_pinterest',
+        'consent_pinterest': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_pinterest',
+        'consent_pinterest': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_pinterest',
+        'consent_pinterest': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_pinterest',
+        'consent_pinterest': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('youtube_targeting')) {
+      _mtm.push({
+        'event': 'consent_youtube',
+        'consent_youtube': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_youtube',
+        'consent_youtube': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_youtube',
+        'consent_youtube': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_youtube',
+        'consent_youtube': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('partner_gutschein')) {
+      _mtm.push({
+        'event': 'consent_gutschein',
+        'consent_gutschein': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_gutschein',
+        'consent_gutschein': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_gutschein',
+        'consent_gutschein': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_gutschein',
+        'consent_gutschein': 'denied'
+      });
+    }
+
   }
 ,
 
   onAccept: function (cookie) {
     console.log('onAccept fired!')
+
     if (cc.allowedCategory('technisch')) {
       _mtm.push({
         'event': 'consent_technisch',
-        'consent_technisch': {
-          'technisch': 'active',
-        }
+        'consent_technisch': 'active'
       });
       dataLayer.push({
         'event': 'consent_technisch',
-        'consent_technisch': {
-          'technisch': 'active',
-        }
+        'consent_technisch': 'active'
       });
     } else {
       _mtm.push({
         'event': 'consent_technisch',
-        'consent_technisch': {
-          'technisch': 'denied',
-        }
+        'consent_technisch': 'denied'
       });
       dataLayer.push({
         'event': 'consent_technisch',
-        'consent_technisch': {
-          'technisch': 'denied',
-        }
+        'consent_technisch': 'denied'
       });
     }
+
     if (cc.allowedCategory('komfort')) {
       _mtm.push({
         'event': 'consent_komfort',
-        'consent_komfort': {
-          'komfort': 'active',
-        }
+        'consent_komfort': 'active'
       });
       dataLayer.push({
         'event': 'consent_komfort',
-        'consent_komfort': {
-          'komfort': 'active',
-        }
+        'consent_komfort': 'active'
       });
     } else {
       _mtm.push({
         'event': 'consent_komfort',
-        'consent_komfort': {
-          'komfort': 'active',
-        }
+        'consent_komfort': 'denied'
       });
       dataLayer.push({
         'event': 'consent_komfort',
-        'consent_komfort': {
-          'komfort': 'denied',
-        }
+        'consent_komfort': 'denied'
       });
     }
+
     if (cc.allowedCategory('matomo_analytics')) {
       _mtm.push({
         'event': 'consent_matomo',
@@ -218,6 +374,7 @@ window.addEventListener('load', function () {
         'consent_matomo': 'denied'
       });
     }
+
     if (cc.allowedCategory('google_analytics')) {
       _mtm.push({
         'event': 'consent_google',
@@ -237,65 +394,233 @@ window.addEventListener('load', function () {
         'consent_google': 'denied'
       });
     }
+
+    if (cc.allowedCategory('bing_targeting')) {
+      _mtm.push({
+        'event': 'consent_bing',
+        'consent_bing': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_bing',
+        'consent_bing': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_bing',
+        'consent_bing': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_bing',
+        'consent_bing': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('clarity_usability')) {
+      _mtm.push({
+        'event': 'consent_clarity',
+        'consent_clarity': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_clarity',
+        'consent_clarity': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_clarity',
+        'consent_clarity': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_clarity',
+        'consent_clarity': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('facebook_targeting')) {
+      _mtm.push({
+        'event': 'consent_facebook',
+        'consent_facebook': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_facebook',
+        'consent_facebook': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_facebook',
+        'consent_facebook': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_facebook',
+        'consent_facebook': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('adwords_targeting')) {
+      _mtm.push({
+        'event': 'consent_adwords',
+        'consent_adwords': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_adwords',
+        'consent_adwords': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_adwords',
+        'consent_adwords': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_adwords',
+        'consent_adwords': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('hotjar_usability')) {
+      _mtm.push({
+        'event': 'consent_hotjar',
+        'consent_hotjar': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_hotjar',
+        'consent_hotjar': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_hotjar',
+        'consent_hotjar': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_hotjar',
+        'consent_hotjar': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('instagram_targeting')) {
+      _mtm.push({
+        'event': 'consent_instagram',
+        'consent_instagram': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_instagram',
+        'consent_instagram': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_instagram',
+        'consent_instagram': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_instagram',
+        'consent_instagram': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('pinterest_targeting')) {
+      _mtm.push({
+        'event': 'consent_pinterest',
+        'consent_pinterest': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_pinterest',
+        'consent_pinterest': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_pinterest',
+        'consent_pinterest': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_pinterest',
+        'consent_pinterest': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('youtube_targeting')) {
+      _mtm.push({
+        'event': 'consent_youtube',
+        'consent_youtube': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_youtube',
+        'consent_youtube': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_youtube',
+        'consent_youtube': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_youtube',
+        'consent_youtube': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('partner_gutschein')) {
+      _mtm.push({
+        'event': 'consent_gutschein',
+        'consent_gutschein': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_gutschein',
+        'consent_gutschein': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_gutschein',
+        'consent_gutschein': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_gutschein',
+        'consent_gutschein': 'denied'
+      });
+    }
+
   }
 ,
 
   onChange: function (cookie, changed_preferences) {
     console.log('onChange fired!');
+
     if (cc.allowedCategory('technisch')) {
       _mtm.push({
         'event': 'consent_technisch',
-        'consent_technisch': {
-          'technisch': 'active',
-        }
+        'consent_technisch': 'active'
       });
       dataLayer.push({
         'event': 'consent_technisch',
-        'consent_technisch': {
-          'technisch': 'active',
-        }
+        'consent_technisch': 'active'
       });
     } else {
       _mtm.push({
         'event': 'consent_technisch',
-        'consent_technisch': {
-          'technisch': 'denied',
-        }
+        'consent_technisch': 'denied'
       });
       dataLayer.push({
         'event': 'consent_technisch',
-        'consent_technisch': {
-          'technisch': 'denied',
-        }
+        'consent_technisch': 'denied'
       });
     }
+
     if (cc.allowedCategory('komfort')) {
       _mtm.push({
         'event': 'consent_komfort',
-        'consent_komfort': {
-          'komfort': 'active',
-        }
+        'consent_komfort': 'active'
       });
       dataLayer.push({
         'event': 'consent_komfort',
-        'consent_komfort': {
-          'komfort': 'active',
-        }
+        'consent_komfort': 'active'
       });
     } else {
       _mtm.push({
         'event': 'consent_komfort',
-        'consent_komfort': {
-          'komfort': 'active',
-        }
+        'consent_komfort': 'denied'
       });
       dataLayer.push({
         'event': 'consent_komfort',
-        'consent_komfort': {
-          'komfort': 'denied',
-        }
+        'consent_komfort': 'denied'
       });
     }
+
     if (cc.allowedCategory('matomo_analytics')) {
       _mtm.push({
         'event': 'consent_matomo',
@@ -315,6 +640,7 @@ window.addEventListener('load', function () {
         'consent_matomo': 'denied'
       });
     }
+
     if (cc.allowedCategory('google_analytics')) {
       _mtm.push({
         'event': 'consent_google',
@@ -334,6 +660,187 @@ window.addEventListener('load', function () {
         'consent_google': 'denied'
       });
     }
+
+    if (cc.allowedCategory('bing_targeting')) {
+      _mtm.push({
+        'event': 'consent_bing',
+        'consent_bing': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_bing',
+        'consent_bing': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_bing',
+        'consent_bing': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_bing',
+        'consent_bing': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('clarity_usability')) {
+      _mtm.push({
+        'event': 'consent_clarity',
+        'consent_clarity': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_clarity',
+        'consent_clarity': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_clarity',
+        'consent_clarity': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_clarity',
+        'consent_clarity': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('facebook_targeting')) {
+      _mtm.push({
+        'event': 'consent_facebook',
+        'consent_facebook': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_facebook',
+        'consent_facebook': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_facebook',
+        'consent_facebook': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_facebook',
+        'consent_facebook': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('adwords_targeting')) {
+      _mtm.push({
+        'event': 'consent_adwords',
+        'consent_adwords': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_adwords',
+        'consent_adwords': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_adwords',
+        'consent_adwords': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_adwords',
+        'consent_adwords': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('hotjar_usability')) {
+      _mtm.push({
+        'event': 'consent_hotjar',
+        'consent_hotjar': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_hotjar',
+        'consent_hotjar': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_hotjar',
+        'consent_hotjar': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_hotjar',
+        'consent_hotjar': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('instagram_targeting')) {
+      _mtm.push({
+        'event': 'consent_instagram',
+        'consent_instagram': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_instagram',
+        'consent_instagram': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_instagram',
+        'consent_instagram': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_instagram',
+        'consent_instagram': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('pinterest_targeting')) {
+      _mtm.push({
+        'event': 'consent_pinterest',
+        'consent_pinterest': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_pinterest',
+        'consent_pinterest': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_pinterest',
+        'consent_pinterest': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_pinterest',
+        'consent_pinterest': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('youtube_targeting')) {
+      _mtm.push({
+        'event': 'consent_youtube',
+        'consent_youtube': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_youtube',
+        'consent_youtube': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_youtube',
+        'consent_youtube': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_youtube',
+        'consent_youtube': 'denied'
+      });
+    }
+
+    if (cc.allowedCategory('partner_gutschein')) {
+      _mtm.push({
+        'event': 'consent_gutschein',
+        'consent_gutschein': 'active'
+      });
+      dataLayer.push({
+        'event': 'consent_gutschein',
+        'consent_gutschein': 'active'
+      });
+    } else {
+      _mtm.push({
+        'event': 'consent_gutschein',
+        'consent_gutschein': 'denied'
+      });
+      dataLayer.push({
+        'event': 'consent_gutschein',
+        'consent_gutschein': 'denied'
+      });
+    }
+
   }
 ,
 
@@ -345,7 +852,7 @@ window.addEventListener('load', function () {
         title: 'Wir verwenden Cookies!',
             description
       :
-        '{/literal}{s name="cookiePermission/wirverwendencookies"}{/s}{literal}',
+        '{/literal}{s name="cookiePermission/wirverwendencookies"}{/s}{literal}<br /><br /><button type="button" id="wsc-cookie" data-cc="c-settings" class="c-bn cc_link">Cookies selbst wählen</button>',
             primary_btn
       :
         {
@@ -355,13 +862,6 @@ window.addEventListener('load', function () {
           'accept_all'
         }
       ,
-        primary1_btn: {
-          text: 'Einstellungen',
-              role
-        :
-          'settings'
-        }
-      ,
         secondary_btn: {
           text: 'Alle Ablehnen',
               role
@@ -369,7 +869,7 @@ window.addEventListener('load', function () {
           'accept_necessary'
         }
       ,
-        revision_message: '<br><br>Dear user, terms and conditions have changed since the last time you visisted!',
+        revision_message: '{/literal}{s name="cookiePermission/revision_message"}{/s}{literal}',
       }
     ,
       settings_modal: {
@@ -449,7 +949,7 @@ window.addEventListener('load', function () {
           ]
         }, {
           title: 'Komfort',
-          description: 'These cookies are essential for the proper functioning of my website. Without these cookies, the website would not work properly',
+          description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
           toggle: {
             value: 'komfort',
             enabled: false,
@@ -471,7 +971,7 @@ window.addEventListener('load', function () {
           ]
         }, {
           title: 'Matomo Analytics / Tag-Manager',
-          description: 'These cookies allow the website to remember the choices you have made in the past',
+          description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
           toggle: {
             value: 'matomo_analytics',
             enabled: false,
@@ -479,7 +979,7 @@ window.addEventListener('load', function () {
           }
         }, {
           title: 'Google Analytics / Tag-Manager',
-          description: 'These cookies allow the website to remember the choices you have made in the past',
+          description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
           toggle: {
             value: 'google_analytics',
             enabled: false,
@@ -508,7 +1008,7 @@ window.addEventListener('load', function () {
           ]
         }, {
           title: 'Bing Werbe- und Targeting-Cookies',
-          description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you',
+          description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
           toggle: {
             value: 'bing_targeting',
             enabled: false,
@@ -537,7 +1037,7 @@ window.addEventListener('load', function () {
           ]
         }, {
           title: 'Clarity Usability',
-          description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you',
+          description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
           toggle: {
             value: 'clarity_usability',
             enabled: false,
@@ -579,7 +1079,7 @@ window.addEventListener('load', function () {
           ]
         }, {
           title: 'Facebook Werbe- und Targeting-Cookies',
-          description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you',
+          description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
           toggle: {
             value: 'facebook_targeting',
             enabled: false,
@@ -596,7 +1096,7 @@ window.addEventListener('load', function () {
           ]
         }, {
           title: 'AdWords Werbe- und Targeting-Cookies',
-          description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you',
+          description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
           toggle: {
             value: 'adwords_targeting',
             enabled: false,
@@ -613,7 +1113,7 @@ window.addEventListener('load', function () {
           ]
         }, {
           title: 'Hotjar Usability',
-          description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you',
+          description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
           toggle: {
             value: 'hotjar_usability',
             enabled: false,
@@ -630,7 +1130,7 @@ window.addEventListener('load', function () {
           ]
         }, {
           title: 'Instagram Werbe- und Targeting-Cookies',
-          description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you',
+          description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
           toggle: {
             value: 'instagram_targeting',
             enabled: false,
@@ -653,7 +1153,7 @@ window.addEventListener('load', function () {
           ]
         }, {
           title: 'Pinterest Werbe- und Targeting-Cookies',
-          description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you',
+          description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
           toggle: {
             value: 'pinterest_targeting',
             enabled: false,
@@ -688,7 +1188,7 @@ window.addEventListener('load', function () {
           ]
         }, {
           title: 'Youtube Werbe- und Targeting-Cookies',
-          description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you',
+          description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
           toggle: {
             value: 'youtube_targeting',
             enabled: false,
@@ -710,8 +1210,16 @@ window.addEventListener('load', function () {
             }
           ]
         }, {
-          title: 'Mehr Informationen',
-          description: 'Bei Fragen zu unserer Richtlinie zu Cookies und Ihren Auswahlmöglichkeiten wenden Sie sich bitte an <a class="cc-link" href="#yourcontactpage">Kontakt</a>.',
+          title: 'Sovendus Partnernetzwerk',
+          description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
+          toggle: {
+            value: 'partner_gutschein',
+            enabled: false,
+            readonly: false
+          }
+        }, {
+          title: '{/literal}{s name="cookiePermission/cookieMoreInfo"}{/s}{literal}',
+          description: '{/literal}{s name="cookiePermission/cookieMoreInfoBeschreibung"}{/s}{literal}',
         }
         ]
       }

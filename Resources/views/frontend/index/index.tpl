@@ -106,10 +106,66 @@
     {$smarty.block.parent}
 
     {if {config name='wscTagManagerConsentManagerOrestbida'} === '1'}
-        <script defer src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent.js"></script>
+        <script defer
+                src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent.js"></script>
         <script>
             {include file="frontend/orestbida-cookieconsent/cookieconsent-init.js.tpl"}
         </script>
+    {/if}
+
+    {* DataLayer aktiv *}
+    {if {config name='wscTagManagerDataLayer'}}
+
+        {* DataLayer Matomo *}
+        {if {config name='wscTagManagerDataLayerMatomo'}}
+
+            {* ANFANG des Kopfes *}
+        {literal}
+            <script>
+                setTimeout(function () {
+                    window._mtm = window._mtm || [];
+                    window._mtm.push({ecommerce: null});
+                    window._mtm.push({
+                        {/literal}
+                        {* ENDE des Kopfes *}
+
+                        {include file="frontend/index/DataLayer.tpl"}
+
+                        {* ANFANG des Fußes *}
+                        {literal}
+                    });
+                }, {/literal}{config name='wscTagManagerDataLayerTime'}{literal});
+            </script>
+        {/literal}
+            {* ENDE des Fußes *}
+
+        {/if}
+
+        {* DataLayer Google *}
+        {if {config name='wscTagManagerDataLayerGoogle'}}
+
+            {* ANFANG des Kopfes *}
+        {literal}
+            <script>
+                setTimeout(function () {
+                    window.dataLayer = window.dataLayer || [];
+                    window.dataLayer.push({ecommerce: null});
+                    window.dataLayer.push({
+                        {/literal}
+                        {* ENDE des Kopfes *}
+
+                        {include file="frontend/index/DataLayer.tpl"}
+
+                        {* ANFANG des Fußes *}
+                        {literal}
+                    });
+                }, {/literal}{config name='wscTagManagerDataLayerTime'}{literal});
+            </script>
+        {/literal}
+            {* ENDE des Fußes *}
+
+        {/if}
+
     {/if}
 
 {/block}

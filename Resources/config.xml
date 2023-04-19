@@ -239,6 +239,16 @@
             </description>
         </element>
 
+        <element scope="shop" type="text">
+            <name>wscTagManagerDataLayerTime</name>
+            <label lang="de-DE">Push Datalayer Verzögerung in Millisekunden (1000 = 1 Sekunde)</label>
+            <label lang="en-EN">Push Datalayer Verzögerung in Millisekunden (1000 = 1 Sekunde)</label>
+            <value>50</value>
+            <description lang="de-DE">Verzögerung des DataLayer Push um erst den Consent Manager seine Daten zu pushen
+            </description>
+            <description lang="en-EN">Activate to create the for Google DataLayer in the header</description>
+        </element>
+
         <element type="button">
             <name>wscTagManagerOrestbida-TEXT</name>
             <label lang="de">Orestbida Consent Manager</label>
@@ -283,7 +293,7 @@
             <name>wsc_Cookie_Vergleichswert</name>
             <label lang="de-DE">Zahl zur Prüfung von Cookie Consent neu starten</label>
             <label lang="en-EN">Restart number to check cookie consent</label>
-            <value>V1</value>
+            <value>1</value>
             <description lang="de-DE">Cookie Name: wsc_Cookie_Vergleichswert</description>
             <description lang="en-EN">Cookie Name: wsc_Cookie_Vergleichswert</description>
         </element>
