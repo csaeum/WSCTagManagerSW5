@@ -18,15 +18,15 @@
         {if {config name='wscTagManagerMatomo'}}
 
             {if {config name='wscTagManagerMatomoPage'}}
-            {literal}
-                <!-- Matomo (noscript) -->
-                <noscript>
-                <p>
-                <img src="{/literal}{config name='wscTagManagerMatomoURL'}{literal}/matomo.php?idsite={/literal}{config name='wscTagManagerMatomoPageID'}{literal}&amp;rec=1" style="border:0;" alt="" />
-                </p>
-                </noscript>
-                <!-- End Matomo Code (noscript) -->
-            {/literal}
+                {literal}
+                    <!-- Matomo (noscript) -->
+                    <noscript>
+                        <p>
+                            <img src="{/literal}{config name='wscTagManagerMatomoURL'}{literal}/matomo.php?idsite={/literal}{config name='wscTagManagerMatomoPageID'}{literal}&amp;rec=1" style="border:0;" alt="" />
+                        </p>
+                    </noscript>
+                    <!-- End Matomo Code (noscript) -->
+                {/literal}
             {/if}
 
         {/if}
@@ -38,13 +38,13 @@
         {if {config name='wscTagManagerGoogle'}}
 
             {if {config name='wscTagManagerGoogleTM'}}
-            {literal}
-                <!-- Google Tag Manager (noscript) -->
-                <noscript>
-                <iframe src="https://www.googletagmanager.com/ns.html?id={/literal}{config name='wscTagManagerGoogleTagID'}{literal}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-                </noscript>
-                <!-- End Google Tag Manager (noscript) -->
-            {/literal}
+                {literal}
+                    <!-- Google Tag Manager (noscript) -->
+                    <noscript>
+                        <iframe src="https://www.googletagmanager.com/ns.html?id={/literal}{config name='wscTagManagerGoogleTagID'}{literal}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+                    </noscript>
+                    <!-- End Google Tag Manager (noscript) -->
+                {/literal}
             {/if}
 
         {/if}
@@ -106,8 +106,7 @@
     {$smarty.block.parent}
 
     {if {config name='wscTagManagerConsentManagerOrestbida'} === '1'}
-        <script defer
-                src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent.js"></script>
+        <script defer src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent.js"></script>
         <script>
             {include file="frontend/orestbida-cookieconsent/cookieconsent-init.js.tpl"}
         </script>
@@ -117,7 +116,7 @@
     {if {config name='wscTagManagerDataLayer'}}
 
         {* DataLayer Matomo *}
-        {if {config name='wscTagManagerDataLayerMatomo'}}
+        {if {config name='wscTagManagerDataLayerMatomo'} AND {config name='wscTagManagerConsentManagerOrestbida'} === '0'}
 
             {* ANFANG des Kopfes *}
         {literal}
@@ -129,7 +128,7 @@
                         {/literal}
                         {* ENDE des Kopfes *}
 
-                        {include file="frontend/index/DataLayer.tpl"}
+                            {include file="frontend/index/DataLayer.tpl"}
 
                         {* ANFANG des Fußes *}
                         {literal}
@@ -142,7 +141,7 @@
         {/if}
 
         {* DataLayer Google *}
-        {if {config name='wscTagManagerDataLayerGoogle'}}
+        {if {config name='wscTagManagerDataLayerGoogle'} AND {config name='wscTagManagerConsentManagerOrestbida'} === '0'}
 
             {* ANFANG des Kopfes *}
         {literal}
@@ -154,7 +153,7 @@
                         {/literal}
                         {* ENDE des Kopfes *}
 
-                        {include file="frontend/index/DataLayer.tpl"}
+                            {include file="frontend/index/DataLayer.tpl"}
 
                         {* ANFANG des Fußes *}
                         {literal}

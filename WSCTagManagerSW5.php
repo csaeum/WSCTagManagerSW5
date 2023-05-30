@@ -157,6 +157,15 @@ class WSCTagManagerSW5 extends Plugin
             ));
         }
 
+        if(Shopware()->Config()->getByNamespace('WSCTagManagerSW5', 'wsc_Cookie_OpenWebAnalytics')) {
+            $collection->add(new CookieStruct(
+                'wsc_Cookie_OpenWebAnalytics',
+                '/^wsc_Cookie_OpenWebAnalytics$/',
+                'OpenWebAnalytics',
+                CookieGroupStruct::STATISTICS
+            ));
+        }
+
         if(Shopware()->Config()->getByNamespace('WSCTagManagerSW5', 'wsc_Cookie_Matomo')) {
             $collection->add(new CookieStruct(
                 'wsc_Cookie_Matomo',

@@ -62,7 +62,7 @@
             <description lang="en-EN">Should the Matomo script be generally loaded for simple tracking. So you can switch it off without losing the settings</description>
         </element>
 
-        <element scope="shop" type="text">
+        <element scope="shop" type="number">
             <name>wscTagManagerMatomoPageID</name>
             <label lang="de-DE">Matomo Seiten ID</label>
             <label lang="en-EN">Matomo Page ID</label>
@@ -239,7 +239,7 @@
             </description>
         </element>
 
-        <element scope="shop" type="text">
+        <element scope="shop" type="number">
             <name>wscTagManagerDataLayerTime</name>
             <label lang="de-DE">Push Datalayer Verzögerung in Millisekunden (1000 = 1 Sekunde)</label>
             <label lang="en-EN">Push Datalayer Verzögerung in Millisekunden (1000 = 1 Sekunde)</label>
@@ -289,7 +289,7 @@
             <description lang="en-EN">Cookie Name: wsc_Cookie_Vergleichswert</description>
         </element>
 
-        <element scope="shop" type="text">
+        <element scope="shop" type="number">
             <name>wsc_Cookie_Vergleichswert</name>
             <label lang="de-DE">Zahl zur Prüfung von Cookie Consent neu starten</label>
             <label lang="en-EN">Restart number to check cookie consent</label>
@@ -370,6 +370,15 @@
             <value>0</value>
             <description lang="de-DE">Cookie Name: wsc_Cookie_Instagram</description>
             <description lang="en-EN">Cookie Name: wsc_Cookie_Instagram</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wsc_Cookie_OpenWebAnalytics</name>
+            <label lang="de-DE">Cookie für OpenWebAnalytics</label>
+            <label lang="en-EN">Cookie for OpenWebAnalytics</label>
+            <value>0</value>
+            <description lang="de-DE">Cookie Name: wsc_Cookie_OpenWebAnalytics</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_OpenWebAnalytics</description>
         </element>
 
         <element scope="shop" type="boolean">
