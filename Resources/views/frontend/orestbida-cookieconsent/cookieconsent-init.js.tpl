@@ -934,7 +934,7 @@ window.addEventListener('load', function () {
         languages: {
             'de': {
                 consent_modal: {
-                    title: '{/literal}{s name="wscTagManagerSW5/orestbida/consent_model-Title"}{/s}{literal}Wir verwenden Cookies!',
+                    title: '{/literal}{s name="wscTagManagerSW5/orestbida/consent_model-Title"}{/s}{literal}',
                     description: '{/literal}{s name="wscTagManagerSW5/orestbida/consent_model-Description"}{/s}{literal}<br /><br /><button type="button" id="wsc-cookie" data-cc="c-settings" class="c-bn cc_link">Cookies selbst wählen</button>',
                     primary_btn: {
                         text: 'Akzeptiere alle',
