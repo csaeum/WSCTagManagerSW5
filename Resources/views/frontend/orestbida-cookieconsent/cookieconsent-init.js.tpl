@@ -934,8 +934,8 @@ window.addEventListener('load', function () {
         languages: {
             'de': {
                 consent_modal: {
-                    title: 'Wir verwenden Cookies!',
-                    description: '{/literal}{s name="cookiePermission/wirverwendencookies"}{/s}{literal}<br /><br /><button type="button" id="wsc-cookie" data-cc="c-settings" class="c-bn cc_link">Cookies selbst wählen</button>',
+                    title: '{/literal}{s name="wscTagManagerSW5/orestbida/consent_model-Title"}{/s}{literal}Wir verwenden Cookies!',
+                    description: '{/literal}{s name="wscTagManagerSW5/orestbida/consent_model-Description"}{/s}{literal}<br /><br /><button type="button" id="wsc-cookie" data-cc="c-settings" class="c-bn cc_link">Cookies selbst wählen</button>',
                     primary_btn: {
                         text: 'Akzeptiere alle',
                         role: 'accept_all'
@@ -944,7 +944,7 @@ window.addEventListener('load', function () {
                         text: 'Alle Ablehnen',
                         role: 'accept_necessary'
                     },
-                    revision_message: '{/literal}{s name="cookiePermission/revision_message"}{/s}{literal}',
+                    revision_message: '{/literal}{s name="wscTagManagerSW5/orestbida/consent_model-Revision_Message"}{/s}{literal}',
                 },
                 settings_modal: {
                     title: 'Cookie-Einstellungen',
@@ -960,8 +960,8 @@ window.addEventListener('load', function () {
                     ],
                     blocks: [
                         {
-                            title: 'Cookie-Nutzung 📢',
-                            description: '{/literal}{s name="cookiePermission/cookienutzung"}{/s}{literal}'
+                            title: '{/literal}{s name="wscTagManagerSW5/orestbida/settings_model-Blocks-Title"}{/s}{literal}',
+                            description: '{/literal}{s name="wscTagManagerSW5/orestbida/settings_model-Blocks-Description"}{/s}{literal}'
                         },
                         {
                         title: 'Technisch erforderlich',
@@ -1013,7 +1013,7 @@ window.addEventListener('load', function () {
                         },
                         {
                         title: 'Komfort',
-                        description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
+                        description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
                             toggle: {
                                 value: 'komfort',
                                 enabled: false,
@@ -1036,7 +1036,7 @@ window.addEventListener('load', function () {
                         },
                         {
                         title: 'Matomo Analytics / Tag-Manager',
-                        description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
+                        description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
                             toggle: {
                                 value: 'matomo_analytics',
                                 enabled: false,
@@ -1045,7 +1045,7 @@ window.addEventListener('load', function () {
                         },
                         {
                         title: 'Google Analytics / Tag-Manager',
-                        description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
+                        description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
                             toggle: {
                                 value: 'google_analytics',
                                 enabled: false,
@@ -1075,7 +1075,7 @@ window.addEventListener('load', function () {
                         },
                         {
                         title: 'Bing Werbe- und Targeting-Cookies',
-                        description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
+                        description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
                             toggle: {
                                 value: 'bing_targeting',
                                 enabled: false,
@@ -1105,7 +1105,7 @@ window.addEventListener('load', function () {
                         },
                         {
                         title: 'Clarity Usability',
-                        description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
+                        description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
                             toggle: {
                                 value: 'clarity_usability',
                                 enabled: false,
@@ -1148,7 +1148,7 @@ window.addEventListener('load', function () {
                         },
                         {
                         title: 'Facebook Werbe- und Targeting-Cookies',
-                        description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
+                        description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
                             toggle: {
                                 value: 'facebook_targeting',
                                 enabled: false,
@@ -1166,7 +1166,7 @@ window.addEventListener('load', function () {
                         },
                         {
                         title: 'AdWords Werbe- und Targeting-Cookies',
-                        description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
+                        description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
                             toggle: {
                                 value: 'adwords_targeting',
                                 enabled: false,
@@ -1184,7 +1184,7 @@ window.addEventListener('load', function () {
                         },
                         {
                         title: 'Hotjar Usability',
-                        description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
+                        description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
                             toggle: {
                                 value: 'hotjar_usability',
                                 enabled: false,
@@ -1202,7 +1202,7 @@ window.addEventListener('load', function () {
                         },
                         {
                         title: 'Instagram Werbe- und Targeting-Cookies',
-                        description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
+                        description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
                             toggle: {
                                 value: 'instagram_targeting',
                                 enabled: false,
@@ -1226,7 +1226,7 @@ window.addEventListener('load', function () {
                         },
                         {
                             title: 'OpenWebAnalytics',
-                            description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
+                            description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
                             toggle: {
                                 value: 'openwebanalytics_analytics',
                                 enabled: false,
@@ -1250,7 +1250,7 @@ window.addEventListener('load', function () {
                         },
                         {
                         title: 'Pinterest Werbe- und Targeting-Cookies',
-                        description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
+                        description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
                             toggle: {
                                 value: 'pinterest_targeting',
                                 enabled: false,
@@ -1286,7 +1286,7 @@ window.addEventListener('load', function () {
                         },
                         {
                         title: 'Youtube Werbe- und Targeting-Cookies',
-                        description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
+                        description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
                             toggle: {
                                 value: 'youtube_targeting',
                                 enabled: false,
@@ -1310,7 +1310,7 @@ window.addEventListener('load', function () {
                         },
                         {
                         title: 'Sovendus Partnernetzwerk',
-                        description: '{/literal}{s name="cookiePermission/cookieAllgemeinBeschreibung"}{/s}{literal}',
+                        description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
                             toggle: {
                                 value: 'partner_gutschein',
                                 enabled: false,
@@ -1318,8 +1318,8 @@ window.addEventListener('load', function () {
                             }
                         },
                         {
-                        title: '{/literal}{s name="cookiePermission/cookieMoreInfo"}{/s}{literal}',
-                        description: '{/literal}{s name="cookiePermission/cookieMoreInfoBeschreibung"}{/s}{literal}',
+                        title: '{/literal}{s name="wscTagManagerSW5/orestbida/Title-cookieMoreInfo"}{/s}{literal}',
+                        description: '{/literal}{s name="wscTagManagerSW5/orestbida/Description-cookieMoreInfo"}{/s}{literal}',
                         }
                     ]
                 }

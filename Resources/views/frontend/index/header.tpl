@@ -17,10 +17,10 @@
             color: var(--cc-btn-primary-text);
             flex: 1;
             font-size: .82em;
-            padding: 1em 1.7em;
             font-weight: 600;
+            line-height: 1.3rem;
             transition: background-color .25s ease !important;
-            margin: 0px auto;
+            width: 100%;
         }
     </style>
 {/block}
