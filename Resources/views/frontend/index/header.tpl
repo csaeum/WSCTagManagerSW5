@@ -41,12 +41,7 @@
                         var _mtm = window._mtm = window._mtm || [];
                         _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
                         var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-                        g.async = true;
-                        g.src = '{/literal}{config name='wscTagManagerMatomoURL'}{literal}/js/container_{/literal}{config name='wscTagManagerMatomoTMID'}{literal}.js';
-                        s.parentNode.insertBefore(g, s);
-
-
-
+                        g.async = true; g.src = '{/literal}{config name='wscTagManagerMatomoURL'}{literal}/js/container_{/literal}{config name='wscTagManagerMatomoTMID'}{literal}.js'; s.parentNode.insertBefore(g, s);
                     </script>
                     <!-- End Matomo Tag Manager -->
                 {/literal}
@@ -59,24 +54,22 @@
                         var _paq = window._paq = window._paq || [];
                         /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
                         {/literal}{if {config name='wscTagManagerMatomoPageIDSubdomains'}}{literal}
-                        _paq.push(["setCookieDomain", "{/literal}*.{$Shop->getHost()}{literal}"]);
+                            _paq.push(["setCookieDomain", "{/literal}*.{$Shop->getHost()}{literal}"]);
                         {/literal}{/if}{literal}
                         {/literal}{if {config name='wscTagManagerMatomoPageIDnoTracking'}}{literal}
-                        _paq.push(["setDoNotTrack", true]);
+                            _paq.push(["setDoNotTrack", true]);
                         {/literal}{/if}{literal}
                         {/literal}{if {config name='wscTagManagerMatomoPageIDnoCookies'}}{literal}
-                        _paq.push(["disableCookies"]);
+                            _paq.push(["disableCookies"]);
                         {/literal}{/if}{literal}
-                        _paq.push(['trackPageView']);
-                        _paq.push(['enableLinkTracking']);
+                            _paq.push(['trackPageView']);
+                            _paq.push(['enableLinkTracking']);
                         (function () {
                             var u = "{/literal}{config name='wscTagManagerMatomoURL'}{literal}/";
                             _paq.push(['setTrackerUrl', u + 'matomo.php']);
                             _paq.push(['setSiteId', '{/literal}{config name='wscTagManagerMatomoPageID'}{literal}']);
                             var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
-                            g.async = true;
-                            g.src = u + 'matomo.js';
-                            s.parentNode.insertBefore(g, s);
+                            g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
                         })();
                     </script>
                     <!-- End Matomo Code -->
@@ -120,11 +113,7 @@
                     <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain" data-cookiecategory="google_analytics"{/if}{literal} async src="https://www.googletagmanager.com/gtag/js?id={/literal}{config name='wscTagManagerGoogleA4ID'}{literal}"></script>
                     <script>
                         window.dataLayer = window.dataLayer || [];
-
-                        function gtag() {
-                            dataLayer.push(arguments);
-                        }
-
+                        function gtag() {dataLayer.push(arguments);}
                         gtag('js', new Date());
                         gtag('config', '{/literal}{config name='wscTagManagerGoogleA4ID'}{literal}');
                     </script>
@@ -137,11 +126,7 @@
                     <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain" data-cookiecategory="google_analytics"{/if}{literal} async src="https://www.googletagmanager.com/gtag/js?id={/literal}{config name='wscTagManagerGoogleUAID'}{literal}"></script>
                     <script>
                         window.dataLayer = window.dataLayer || [];
-
-                        function gtag() {
-                            dataLayer.push(arguments);
-                        }
-
+                        function gtag() {dataLayer.push(arguments);}
                         gtag('js', new Date());
                         gtag('config', '{/literal}{config name='wscTagManagerGoogleUAID'}{literal}'{/literal}{if {config name='wscTagManagerGoogleAnonymizeIP'}}{literal}, {'anonymize_ip': true}{/literal}{/if}{literal});
                     </script>
