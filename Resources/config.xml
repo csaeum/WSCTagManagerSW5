@@ -355,6 +355,15 @@
         </element>
 
         <element scope="shop" type="boolean">
+            <name>wsc_Cookie_Gutschein</name>
+            <label lang="de-DE">Cookie für Gutschein Netzwerk</label>
+            <label lang="en-EN">Cookie für Gutschein Netzwerk</label>
+            <value>0</value>
+            <description lang="de-DE">Netzwerke wie z.B.: Sovendus Cookie - Name: wsc_Cookie_Gutschein</description>
+            <description lang="en-EN">Netzwerke wie z.B.: Sovendus Cookie - Name: wsc_Cookie_Gutschein</description>
+        </element>
+
+        <element scope="shop" type="boolean">
             <name>wsc_Cookie_Hotjar</name>
             <label lang="de-DE">Cookie für Hotjar Limited</label>
             <label lang="en-EN">Cookie for Hotjar Limited</label>
