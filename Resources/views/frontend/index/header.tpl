@@ -37,7 +37,7 @@
             {if {config name='wscTagManagerMatomoTM'}}
                 {literal}
                     <!-- Matomo Tag Manager -->
-                    <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain" data-cookiecategory="matomo_analytics"{/if}{literal}>
+                    <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain" data-category="matomo_analytics"{/if}{literal}>
                         var _mtm = window._mtm = window._mtm || [];
                         _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
                         var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
@@ -50,7 +50,7 @@
             {if {config name='wscTagManagerMatomoPage'}}
                 {literal}
                     <!-- Matomo -->
-                    <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain" data-cookiecategory="matomo_analytics"{/if}{literal} >
+                    <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain" data-category="matomo_analytics"{/if}{literal} >
                         var _paq = window._paq = window._paq || [];
                         /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
                         {/literal}{if {config name='wscTagManagerMatomoPageIDSubdomains'}}{literal}
@@ -86,9 +86,22 @@
         {if {config name='wscTagManagerGoogle'}}
 
             {if {config name='wscTagManagerGoogleTM'}}
+
+                {literal}
+                    <script>
+                        // Define dataLayer and the gtag function.
+                        window.dataLayer = window.dataLayer || [];
+                        function gtag(){dataLayer.push(arguments);}
+                        gtag('consent', 'default', {
+                            'matomo_analytics_storage': 'denied',
+                            'google_analytics_storage': 'denied'
+                        });
+                    </script>
+                {/literal}
+
                 {literal}
                     <!-- Google Tag Manager -->
-                    <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain" data-cookiecategory="google_analytics"{/if}{literal} >
+                    <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain" data-category="google_analytics"{/if}{literal} >
                         (function (w, d, s, l, i) {
                             w[l] = w[l] || [];
                             w[l].push({
@@ -105,30 +118,18 @@
                     </script>
                     <!-- End Google Tag Manager -->
                 {/literal}
+
             {/if}
 
             {if {config name='wscTagManagerGoogleA4'}}
                 {literal}
                     <!-- Global site tag (gtag.js) - Google Analytics -->
-                    <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain" data-cookiecategory="google_analytics"{/if}{literal} async src="https://www.googletagmanager.com/gtag/js?id={/literal}{config name='wscTagManagerGoogleA4ID'}{literal}"></script>
+                    <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain" data-category="google_analytics"{/if}{literal} async src="https://www.googletagmanager.com/gtag/js?id={/literal}{config name='wscTagManagerGoogleA4ID'}{literal}"></script>
                     <script>
                         window.dataLayer = window.dataLayer || [];
                         function gtag() {dataLayer.push(arguments);}
                         gtag('js', new Date());
                         gtag('config', '{/literal}{config name='wscTagManagerGoogleA4ID'}{literal}');
-                    </script>
-                {/literal}
-            {/if}
-
-            {if {config name='wscTagManagerGoogleUA'}}
-                {literal}
-                    <!-- Global site tag (gtag.js) - Google Analytics -->
-                    <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain" data-cookiecategory="google_analytics"{/if}{literal} async src="https://www.googletagmanager.com/gtag/js?id={/literal}{config name='wscTagManagerGoogleUAID'}{literal}"></script>
-                    <script>
-                        window.dataLayer = window.dataLayer || [];
-                        function gtag() {dataLayer.push(arguments);}
-                        gtag('js', new Date());
-                        gtag('config', '{/literal}{config name='wscTagManagerGoogleUAID'}{literal}'{/literal}{if {config name='wscTagManagerGoogleAnonymizeIP'}}{literal}, {'anonymize_ip': true}{/literal}{/if}{literal});
                     </script>
                 {/literal}
             {/if}

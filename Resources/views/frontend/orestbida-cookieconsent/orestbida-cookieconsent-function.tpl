@@ -1,5 +1,5 @@
 {literal}
-    if (cc.allowedCategory('technisch')) {
+    if (cc.acceptedCategory('technisch')) {
         _mtm.push({
             'event': 'consent_technisch',
             'consent_technisch': 'active'
@@ -19,7 +19,7 @@
         });
     }
 
-    if (cc.allowedCategory('komfort')) {
+    if (cc.acceptedCategory('komfort')) {
         _mtm.push({
             'event': 'consent_komfort',
             'consent_komfort': 'active'
@@ -41,71 +41,57 @@
 {/literal}
 {* Matomo START *}
 {if {config name='wsc_Cookie_Matomo'}}
-{literal}
+    {literal}
 
-    if (cc.allowedCategory('matomo_analytics')) {
-        _mtm.push({
-            'event': 'consent_matomo',
-            'consent_matomo': 'active'
-        });
-        dataLayer.push({
-            'event': 'consent_matomo',
-            'consent_matomo': 'active'
-        });
-        window._mtm = window._mtm || [];
-        window._mtm.push({ecommerce: null});
-        window._mtm.push({
-        {/literal}
-            {include file="frontend/index/DataLayer.tpl"}
-        {literal}
-        });
-    } else {
-        _mtm.push({
-            'event': 'consent_matomo',
-            'consent_matomo': 'denied'
-        });
-        dataLayer.push({
-            'event': 'consent_matomo',
-            'consent_matomo': 'denied'
-        });
-    }
+        if (cc.acceptedCategory('matomo_analytics')) {
+            window._mtm.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'active'
+            });
+            window.dataLayer.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'active'
+            });
+        } else {
+            _mtm.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'denied'
+            });
+            dataLayer.push({
+                'event': 'consent_matomo',
+                'consent_matomo': 'denied'
+            });
+        }
 
-{/literal}
+    {/literal}
 {/if}
 {* Matomo ENDE *}
 
 {* Google  START *}
 {if {config name='wsc_Cookie_Google'}}
-{literal}
+    {literal}
 
-    if (cc.allowedCategory('google_analytics')) {
-        _mtm.push({
-            'event': 'consent_google',
-            'consent_google': 'active'
-        });
-        dataLayer.push({
-            'event': 'consent_google',
-            'consent_google': 'active'
-        });
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({ecommerce: null});
-        window.dataLayer.push({
-        {/literal}
-            {include file="frontend/index/DataLayer.tpl"}
-        {literal}
-        });
-    } else {
-        _mtm.push({
-            'event': 'consent_google',
-            'consent_google': 'denied'
-        });
-        dataLayer.push({
-            'event': 'consent_google',
-            'consent_google': 'denied'
-        });
-    }
+        if (cc.acceptedCategory('google_analytics')) {
+            window._mtm.push({
+                'event': 'consent_google',
+                'consent_google': 'active'
+            });
+            window.dataLayer.push({
+                'event': 'consent_google',
+                'consent_google': 'active'
+            });
+        } else {
+            _mtm.push({
+                'event': 'consent_google',
+                'consent_google': 'denied'
+            });
+            dataLayer.push({
+                'event': 'consent_google',
+                'consent_google': 'denied'
+            });
+        }
 
-{/literal}
+    {/literal}
 {/if}
 {* Google ENDE *}
 
@@ -113,7 +99,7 @@
 {if {config name='wsc_Cookie_Bing'}}
 {literal}
 
-if (cc.allowedCategory('bing_targeting')) {
+if (cc.acceptedCategory('bing_targeting')) {
     _mtm.push({
         'event': 'consent_bing',
         'consent_bing': 'active'
@@ -141,7 +127,7 @@ if (cc.allowedCategory('bing_targeting')) {
 {if {config name='wsc_Cookie_Clarity'}}
 {literal}
 
-if (cc.allowedCategory('clarity_usability')) {
+if (cc.acceptedCategory('clarity_usability')) {
     _mtm.push({
         'event': 'consent_clarity',
         'consent_clarity': 'active'
@@ -169,7 +155,7 @@ if (cc.allowedCategory('clarity_usability')) {
 {if {config name='wsc_Cookie_Facebook'}}
 {literal}
 
-if (cc.allowedCategory('facebook_targeting')) {
+if (cc.acceptedCategory('facebook_targeting')) {
     _mtm.push({
         'event': 'consent_facebook',
         'consent_facebook': 'active'
@@ -194,28 +180,28 @@ if (cc.allowedCategory('facebook_targeting')) {
 {* Facebook ENDE *}
 
 {* Google AdWords  START *}
-{if {config name='wsc_Cookie_Google'}}
+{if {config name='wsc_Cookie_GoogleADs'}}
 {literal}
 
-if (cc.allowedCategory('adwords_targeting')) {
+    if (cc.acceptedCategory('adwords_targeting')) {
     _mtm.push({
-        'event': 'consent_adwords',
-        'consent_adwords': 'active'
+    'event': 'consent_adwords',
+    'consent_adwords': 'active'
     });
     dataLayer.push({
-        'event': 'consent_adwords',
-        'consent_adwords': 'active'
+    'event': 'consent_adwords',
+    'consent_adwords': 'active'
     });
-} else {
+    } else {
     _mtm.push({
-        'event': 'consent_adwords',
-        'consent_adwords': 'denied'
+    'event': 'consent_adwords',
+    'consent_adwords': 'denied'
     });
     dataLayer.push({
-        'event': 'consent_adwords',
-        'consent_adwords': 'denied'
+    'event': 'consent_adwords',
+    'consent_adwords': 'denied'
     });
-}
+    }
 
 {/literal}
 {/if}
@@ -225,7 +211,7 @@ if (cc.allowedCategory('adwords_targeting')) {
 {if {config name='wsc_Cookie_Gutschein'}}
 {literal}
 
-if (cc.allowedCategory('partner_gutschein')) {
+if (cc.acceptedCategory('partner_gutschein')) {
     _mtm.push({
         'event': 'consent_gutschein',
         'consent_gutschein': 'active'
@@ -253,7 +239,7 @@ if (cc.allowedCategory('partner_gutschein')) {
 {if {config name='wsc_Cookie_Hotjar'}}
 {literal}
 
-if (cc.allowedCategory('hotjar_usability')) {
+if (cc.acceptedCategory('hotjar_usability')) {
     _mtm.push({
         'event': 'consent_hotjar',
         'consent_hotjar': 'active'
@@ -281,7 +267,7 @@ if (cc.allowedCategory('hotjar_usability')) {
 {if {config name='wsc_Cookie_Instagram'}}
 {literal}
 
-if (cc.allowedCategory('instagram_targeting')) {
+if (cc.acceptedCategory('instagram_targeting')) {
     _mtm.push({
         'event': 'consent_instagram',
         'consent_instagram': 'active'
@@ -309,7 +295,7 @@ if (cc.allowedCategory('instagram_targeting')) {
 {if {config name='wsc_Cookie_OpenWebAnalytics'}}
 {literal}
 
-if (cc.allowedCategory('openwebanalytics_analytics')) {
+if (cc.acceptedCategory('openwebanalytics_analytics')) {
     _mtm.push({
         'event': 'openwebanalytics_analytics',
         'consent_instagram': 'active'
@@ -337,7 +323,7 @@ if (cc.allowedCategory('openwebanalytics_analytics')) {
 {if {config name='wsc_Cookie_Pinterest'}}
 {literal}
 
-if (cc.allowedCategory('pinterest_targeting')) {
+if (cc.acceptedCategory('pinterest_targeting')) {
     _mtm.push({
         'event': 'consent_pinterest',
         'consent_pinterest': 'active'
@@ -365,7 +351,7 @@ if (cc.allowedCategory('pinterest_targeting')) {
 {if {config name='wsc_Cookie_Youtube'}}
 {literal}
 
-if (cc.allowedCategory('youtube_targeting')) {
+if (cc.acceptedCategory('youtube_targeting')) {
     _mtm.push({
         'event': 'consent_youtube',
         'consent_youtube': 'active'
@@ -393,7 +379,7 @@ if (cc.allowedCategory('youtube_targeting')) {
 {if {config name='wsc_Cookie_Zammad'}}
 {literal}
 
-if (cc.allowedCategory('partner_gutschein')) {
+if (cc.acceptedCategory('partner_gutschein')) {
     _mtm.push({
         'event': 'consent_gutschein',
         'consent_gutschein': 'active'

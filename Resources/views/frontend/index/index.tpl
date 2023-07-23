@@ -49,54 +49,6 @@
 
     {/if}
 
-    {if {config name='wscTagManager_Cookie_Pruefung'} === '1' AND {config name='wscTagManagerConsentManagerOrestbida'} != '1'}
-
-        {if $smarty.cookies.wsc_Cookie_Vergleichswert === ''}
-
-        {literal}
-            <script>
-                var date = new Date();
-                date.setTime(date.getTime() + 10 * 24 * 60 * 60 * 1000);
-                var expires = date.toUTCString();
-                // var expires = (new Date(Date.now()+ 86400*1000)).toUTCString();
-                document.cookie = "wsc_Cookie_Vergleichswert={/literal}{config name='wsc_Cookie_Vergleichswert'}{literal}; expires="{/literal} + expires + {literal}"; path=/";
-                console.log("wsc_Cookie_Vergleichswert gesetzt");
-                console.log(document.cookie);
-
-                location.reload(true);
-            </script>
-        {/literal}
-
-        {/if}
-
-        {if $smarty.cookies.wsc_Cookie_Vergleichswert != {config name='wsc_Cookie_Vergleichswert'}}
-
-        {literal}
-            <script>
-                var date = new Date();
-                date.setTime(date.getTime() + 30 * 24 * 60 * 60 * 1000);
-                var expires = date.toUTCString();
-                // var expires = (new Date(Date.now()+ 86400*1000)).toUTCString();
-                document.cookie = "wsc_Cookie_Vergleichswert={/literal}{config name='wsc_Cookie_Vergleichswert'}{literal}; expires="{/literal} + expires + {literal}"; path=/";
-                console.log("wsc_Cookie_Vergleichswert neu gesetzt");
-                console.log(document.cookie);
-
-                var date = new Date();
-                date.setTime(date.getTime() - 30 * 24 * 60 * 60 * 1000);
-                var expires = date.toUTCString();
-                // var expires = (new Date(Date.now()+ 86400*1000)).toUTCString();
-                document.cookie = "cookiePreferences=; expires="{/literal} + expires + {literal}"; path=/";
-                console.log("Cookie cookiePreferences zurückgesetzt");
-                console.log(document.cookie);
-
-                location.reload(true);
-            </script>
-        {/literal}
-
-        {/if}
-
-    {/if}
-
 {/block}
 
 {block name="frontend_index_javascript_async_ready"}
@@ -104,17 +56,24 @@
     {$smarty.block.parent}
 
     {if {config name='wscTagManagerConsentManagerOrestbida'} === '1'}
-        <script defer src="/custom/plugins/WSCTagManagerSW5/Resources/views/frontend/orestbida-cookieconsent/cookieconsent.js"></script>
-        <script>
-            {include file="frontend/orestbida-cookieconsent/cookieconsent-init.js.tpl"}
+        <script type="module">
+            {include file="frontend/orestbida-cookieconsent/cookieconsent-config.js.tpl"}
         </script>
     {/if}
+
+{literal}
+    <script>
+            {/literal}
+                {include file="frontend/orestbida-cookieconsent/orestbida-cookieconsent-function.tpl"}
+            {literal}
+    </script>
+{/literal}
 
     {* DataLayer aktiv *}
     {if {config name='wscTagManagerDataLayer'}}
 
         {* DataLayer Matomo *}
-        {if {config name='wscTagManagerDataLayerMatomo'} AND {config name='wscTagManagerConsentManagerOrestbida'} === '0'}
+        {if {config name='wscTagManagerDataLayerMatomo'}}
 
             {* ANFANG des Kopfes *}
         {literal}
@@ -139,7 +98,7 @@
         {/if}
 
         {* DataLayer Google *}
-        {if {config name='wscTagManagerDataLayerGoogle'} AND {config name='wscTagManagerConsentManagerOrestbida'} === '0'}
+        {if {config name='wscTagManagerDataLayerGoogle'}}
 
             {* ANFANG des Kopfes *}
         {literal}

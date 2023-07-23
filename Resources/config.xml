@@ -171,34 +171,6 @@
             <description lang="en-EN">Located at analytics.google.com, uses gtag</description>
         </element>
 
-        <element scope="shop" type="boolean">
-            <name>wscTagManagerGoogleUA</name>
-            <label lang="de-DE">Google Analytics Universal Analytics aktivieren (alt bis 14. Oktober 2020)</label>
-            <label lang="en-EN">Activate Google Analytics Universal Analytics (old to October 14, 2020)</label>
-            <value>0</value>
-            <description lang="de-DE">Soll Google Analytics Universal Analytics generell geladen werden. So kann man es auch mal abschalten ohne die Einstellungen zu verlieren</description>
-            <description lang="en-EN">Should Google Analytics Universal Analytics generally be loaded. So you can switch it off without losing the settings</description>
-        </element>
-
-        <element scope="shop" type="text">
-            <name>wscTagManagerGoogleUAID</name>
-            <label lang="de-DE">Google Analytics Universal Analytics</label>
-            <label lang="en-EN">Google Analytics Universal Analytics</label>
-            <value>UA-xxxxxxxx-x</value>
-            <description lang="de-DE">Zu finden unter analytics.google.com, nutzt gtag</description>
-            <description lang="en-EN">Located at analytics.google.com, uses gtag</description>
-        </element>
-
-        <element scope="shop" type="boolean">
-            <name>wscTagManagerGoogleAnonymizeIP</name>
-            <label lang="de-DE">Google Analytics IP Anonymisierung</label>
-            <label lang="en-EN">Google Analytics IP anonymization</label>
-            <value>0</value>
-            <description lang="de-DE">(Empfohlen!) Aktivieren um die IP Adresse des Besuchers zu verschleiern
-            </description>
-            <description lang="en-EN">(Recommended!) Enable to disguise the visitor's IP address</description>
-        </element>
-
         <element type="button">
             <name>wscTagManagerDataLayer-TEXT</name>
             <label lang="de">DataLayer Einstellungen</label>
@@ -264,6 +236,277 @@
             <name>wscTagManagerConsentManagerOrestbida</name>
             <label lang="de-DE">Consent Manager Orestbida nutzen</label>
             <label lang="en-EN">Consent Manager Orestbida nutzen</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Vergleichswert</description>
+        </element>
+
+        <element type="button">
+            <name>wscTagManagerOrestbidaConsentModalUI-TEXT</name>
+            <label lang="de">Orestbida Consent Manager - Consent Modal UI</label>
+            <label lang="en">Orestbida Consent Manager - Consent Modal UI</label>
+            <options>
+                <style>width:100%; max-width:100%; min-width: 10px; background: none; border: 1px #000000 dashed;
+                    margin:20px 0 20px 0;
+                </style>
+            </options>
+        </element>
+
+        <element scope="shop" type="select">
+            <name>wscTagManagerConsentManagerOrestbida-ConsentModalUI-Layout</name>
+            <label lang="de-DE">Consent ModalUI Layout</label>
+            <label lang="en-EN">Consent ModalUI Layout</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Flip buttons</description>
+            <store>
+                <option>
+                    <value>box</value>
+                    <label>box</label>
+                </option>
+                <option>
+                    <value>box inline</value>
+                    <label>box inline</label>
+                </option>
+                <option>
+                    <value>box wide</value>
+                    <label>box wide</label>
+                </option>
+                <option>
+                    <value>cloud</value>
+                    <label>cloud</label>
+                </option>
+                <option>
+                    <value>cloud inline</value>
+                    <label>cloud inline</label>
+                </option>
+                <option>
+                    <value>bar</value>
+                    <label>bar</label>
+                </option>
+                <option>
+                    <value>bar inline</value>
+                    <label>bar inline</label>
+                </option>
+            </store>
+        </element>
+
+        <element scope="shop" type="select">
+            <name>wscTagManagerConsentManagerOrestbida-ConsentModalUI-Position</name>
+            <label lang="de-DE">Consent ModalUI Position</label>
+            <label lang="en-EN">Consent ModalUI Position</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Flip buttons</description>
+            <store>
+                <option>
+                    <value>top left</value>
+                    <label>top left</label>
+                </option>
+                <option>
+                    <value>top center</value>
+                    <label>top center</label>
+                </option>
+                <option>
+                    <value>top right</value>
+                    <label>top right</label>
+                </option>
+                <option>
+                    <value>middle left</value>
+                    <label>middle left</label>
+                </option>
+                <option>
+                    <value>middle center</value>
+                    <label>middle center</label>
+                </option>
+                <option>
+                    <value>middle right</value>
+                    <label>middle right</label>
+                </option>
+                <option>
+                    <value>bottom left</value>
+                    <label>bottom left</label>
+                </option>
+                <option>
+                    <value>bottom center</value>
+                    <label>bottom center</label>
+                </option>
+                <option>
+                    <value>bottom right</value>
+                    <label>bottom right</label>
+                </option>
+            </store>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerConsentManagerOrestbida-ConsentModalUI-FlipButtons</name>
+            <label lang="de-DE">Flip buttons</label>
+            <label lang="en-EN">Flip buttons</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Flip buttons</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerConsentManagerOrestbida-ConsentModalUI-EqualWeightButtons</name>
+            <label lang="de-DE">Equal weight buttons</label>
+            <label lang="en-EN">Equal weight buttons</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Equal weight buttons</description>
+        </element>
+
+        <element type="button">
+            <name>wscTagManagerOrestbidaPreferencesModalUI-TEXT</name>
+            <label lang="de">Orestbida Consent Manager - Preferences Modal UI</label>
+            <label lang="en">Orestbida Consent Manager - Preferences Modal UI</label>
+            <options>
+                <style>width:100%; max-width:100%; min-width: 10px; background: none; border: 1px #000000 dashed;
+                    margin:20px 0 20px 0;
+                </style>
+            </options>
+        </element>
+
+        <element scope="shop" type="select">
+            <name>wscTagManagerConsentManagerOrestbida-PreferencesModalUI-Layout</name>
+            <label lang="de-DE">Preferences ModalUI Layout</label>
+            <label lang="en-EN">Preferences ModalUI Layout</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Flip buttons</description>
+            <store>
+                <option>
+                    <value>box</value>
+                    <label>box</label>
+                </option>
+                <option>
+                    <value>bar</value>
+                    <label>bar</label>
+                </option>
+                <option>
+                    <value>bar wide</value>
+                    <label>bar wide</label>
+                </option>
+            </store>
+        </element>
+
+        <element scope="shop" type="select">
+            <name>wscTagManagerConsentManagerOrestbida-PreferencesModalUI-Position</name>
+            <label lang="de-DE">Preferences ModalUI Position</label>
+            <label lang="en-EN">Preferences ModalUI Position</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Flip buttons</description>
+            <store>
+                <option>
+                    <value>left</value>
+                    <label>left</label>
+                </option>
+                <option>
+                    <value>right</value>
+                    <label>right</label>
+                </option>
+            </store>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerConsentManagerOrestbida-PreferencesModalUI-FlipButtons</name>
+            <label lang="de-DE">Flip buttons</label>
+            <label lang="en-EN">Flip buttons</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Flip buttons</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerConsentManagerOrestbida-PreferencesModalUI-EqualWeightButtons</name>
+            <label lang="de-DE">Equal weight buttons</label>
+            <label lang="en-EN">Equal weight buttons</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Equal weight buttons</description>
+        </element>
+
+        <element type="button">
+            <name>wscTagManagerOrestbidaConsentModalElements-TEXT</name>
+            <label lang="de">Orestbida Consent Manager - Consent Modal Elements</label>
+            <label lang="en">Orestbida Consent Manager - Consent Modal Elements</label>
+            <options>
+                <style>width:100%; max-width:100%; min-width: 10px; background: none; border: 1px #000000 dashed;
+                    margin:20px 0 20px 0;
+                </style>
+            </options>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerConsentManagerOrestbida-ConsentModalElements-AddXicon</name>
+            <label lang="de-DE">AddXicon nutzen</label>
+            <label lang="en-EN">AddXicon nutzen</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Add X icon (box layout only) = accept necessary</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerConsentManagerOrestbida-ConsentModalElements-RemoveAcceptNecessaryButton</name>
+            <label lang="de-DE">Remove accept necessary button</label>
+            <label lang="en-EN">Remove accept necessary button</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Remove accept necessary button</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerConsentManagerOrestbida-ConsentModalElements-RemoveShowPreferencesButton</name>
+            <label lang="de-DE">Remove show preferences button</label>
+            <label lang="en-EN">Remove show preferences button</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Remove show preferences button</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerConsentManagerOrestbida-ConsentModalElements-RemoveFooterSection</name>
+            <label lang="de-DE">Remove footer section</label>
+            <label lang="en-EN">Remove footer section</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Remove footer section</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerConsentManagerOrestbida-ConsentModalElements-RemoveTitle</name>
+            <label lang="de-DE">Remove title</label>
+            <label lang="en-EN">Remove title</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Remove title</description>
+        </element>
+
+        <element type="button">
+            <name>wscTagManagerOrestbidaMisc-TEXT</name>
+            <label lang="de">Orestbida Consent Manager - Misc</label>
+            <label lang="en">Orestbida Consent Manager - Misc</label>
+            <options>
+                <style>width:100%; max-width:100%; min-width: 10px; background: none; border: 1px #000000 dashed;
+                    margin:20px 0 20px 0;
+                </style>
+            </options>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerConsentManagerOrestbida-Misc-DarkMode</name>
+            <label lang="de-DE">DarkMode nutzen</label>
+            <label lang="en-EN">DarkMode nutzen</label>
+            <value>0</value>
+            <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
+            <description lang="en-EN">Cookie Name: wsc_Cookie_Vergleichswert</description>
+        </element>
+
+        <element scope="shop" type="boolean">
+            <name>wscTagManagerConsentManagerOrestbida-Misc-DisablePageInteraction</name>
+            <label lang="de-DE">Disable page interaction</label>
+            <label lang="en-EN">Disable page interaction</label>
             <value>0</value>
             <description lang="de-DE">Bei aktivierung bitte den Consent Manager von Shopware abschalten!!</description>
             <description lang="en-EN">Cookie Name: wsc_Cookie_Vergleichswert</description>

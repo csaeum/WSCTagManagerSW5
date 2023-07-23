@@ -74,6 +74,10 @@
             }
         ]
 },
+{/literal}
+{* Matomo START *}
+{if {config name='wsc_Cookie_Matomo'}}
+{literal}
 {
     title: 'Matomo Analytics / Tag-Manager',
     description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
@@ -83,6 +87,13 @@
             readonly: false
         }
 },
+{/literal}
+{/if}
+{* Matomo ENDE *}
+
+{* Google  START *}
+{if {config name='wsc_Cookie_Google'}}
+{literal}
 {
     title: 'Google Analytics / Tag-Manager',
     description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
@@ -113,6 +124,13 @@
             }
         ]
 },
+{/literal}
+{/if}
+{* Google ENDE *}
+
+{* Bing  START *}
+{if {config name='wsc_Cookie_Bing'}}
+{literal}
 {
     title: 'Bing Werbe- und Targeting-Cookies',
     description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
@@ -143,6 +161,13 @@
             }
         ]
 },
+{/literal}
+{/if}
+{* Bing ENDE *}
+
+{* Clarity  START *}
+{if {config name='wsc_Cookie_Clarity'}}
+{literal}
 {
     title: 'Clarity Usability',
     description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
@@ -186,6 +211,13 @@
             }
         ]
 },
+{/literal}
+{/if}
+{* Clarity ENDE *}
+
+{* Facebook  START *}
+{if {config name='wsc_Cookie_Facebook'}}
+{literal}
 {
     title: 'Facebook Werbe- und Targeting-Cookies',
     description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
@@ -204,6 +236,13 @@
             }
         ]
 },
+{/literal}
+{/if}
+{* Facebook ENDE *}
+
+{* Google AdWords  START *}
+{if {config name='wsc_Cookie_GoogleADs'}}
+{literal}
 {
     title: 'AdWords Werbe- und Targeting-Cookies',
     description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
@@ -222,6 +261,29 @@
             }
         ]
 },
+{/literal}
+{/if}
+{* Google AdWords ENDE *}
+
+{* Gutschein  START *}
+{if {config name='wsc_Cookie_Gutschein'}}
+{literal}
+{
+title: 'Sovendus Partnernetzwerk',
+description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
+toggle: {
+value: 'partner_gutschein',
+enabled: false,
+readonly: false
+}
+},
+{/literal}
+{/if}
+{* Gutschein ENDE *}
+
+{* Hotjar  START *}
+{if {config name='wsc_Cookie_Hotjar'}}
+{literal}
 {
     title: 'Hotjar Usability',
     description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
@@ -240,6 +302,13 @@
             }
         ]
 },
+{/literal}
+{/if}
+{* Hotjar ENDE *}
+
+{* Instagram  START *}
+{if {config name='wsc_Cookie_Instagram'}}
+{literal}
 {
     title: 'Instagram Werbe- und Targeting-Cookies',
     description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
@@ -264,6 +333,13 @@
             }
         ]
 },
+{/literal}
+{/if}
+{* Instagram ENDE *}
+
+{* OpenWebAnalytics  START *}
+{if {config name='wsc_Cookie_OpenWebAnalytics'}}
+{literal}
 {
     title: 'OpenWebAnalytics',
     description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
@@ -288,6 +364,13 @@
         }
     ]
 },
+{/literal}
+{/if}
+{* OpenWebAnalytics ENDE *}
+
+{* Pinterest  START *}
+{if {config name='wsc_Cookie_Pinterest'}}
+{literal}
 {
     title: 'Pinterest Werbe- und Targeting-Cookies',
     description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
@@ -324,6 +407,13 @@
             }
         ]
 },
+{/literal}
+{/if}
+{* Pinterest ENDE *}
+
+{* Youtube  START *}
+{if {config name='wsc_Cookie_Youtube'}}
+{literal}
 {
     title: 'Youtube Werbe- und Targeting-Cookies',
     description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
@@ -348,15 +438,10 @@
             }
         ]
 },
-{
-    title: 'Sovendus Partnernetzwerk',
-    description: '{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}',
-        toggle: {
-            value: 'partner_gutschein',
-            enabled: false,
-            readonly: false
-        }
-},
+{/literal}
+{/if}
+{* Youtube ENDE *}
+{literal}
 {
     title: '{/literal}{s name="wscTagManagerSW5/orestbida/Title-cookieMoreInfo"}{/s}{literal}',
     description: '{/literal}{s name="wscTagManagerSW5/orestbida/Description-cookieMoreInfo"}{/s}{literal}',
