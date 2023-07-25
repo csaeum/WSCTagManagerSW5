@@ -1,10 +1,5 @@
-{* import { run } from 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.0-rc.16/dist/cookieconsent.esm.js'; *}
-{literal}
-    import 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.0-rc.16/dist/cookieconsent.umd.js';
-{/literal}
-
 {if {config name='wscTagManagerConsentManagerOrestbida-Misc-DarkMode'}}{literal}document.documentElement.classList.add('cc--darkmode');{/literal}{/if}
-{* https://cookieconsent.orestbida.com/advanced/manage-scripts.html *}
+
 {literal}
     window.cc = CookieConsent;
     cc.run({
@@ -25,25 +20,25 @@
         onFirstConsent: ({cookie}) => {
             console.log("onFirstConsent fired", cookie);
             {/literal}
+            {*
                 {include file="frontend/orestbida-cookieconsent/orestbida-cookieconsent-function.tpl"}
+            *}
             {literal}
         },
         onConsent: ({cookie}) => {
             console.log("onConsent fired!", cookie);
             {/literal}
+            {*
                 {include file="frontend/orestbida-cookieconsent/orestbida-cookieconsent-function.tpl"}
+            *}
             {literal}
         },
-        onAccept: ({cookie}) => {
-            console.log("onAccept fired!", cookie);
-            {/literal}
-                {include file="frontend/orestbida-cookieconsent/orestbida-cookieconsent-function.tpl"}
-            {literal}
-        },
-        onChange: ({cookie}) => {
+        onChange: ({cookie, changedCategories, changedPreferences}) => {
             console.log("onChange fired!", changedCategories, changedServices);
             {/literal}
+            {*
                 {include file="frontend/orestbida-cookieconsent/orestbida-cookieconsent-function.tpl"}
+            *}
             {literal}
         },
         categories: {

@@ -37,7 +37,7 @@
             {if {config name='wscTagManagerMatomoTM'}}
                 {literal}
                     <!-- Matomo Tag Manager -->
-                    <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain" data-category="matomo_analytics"{/if}{literal}>
+                    <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain" data-category="analytics" data-service="matomo_analytics"{/if}{literal}>
                         var _mtm = window._mtm = window._mtm || [];
                         _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
                         var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
@@ -88,20 +88,8 @@
             {if {config name='wscTagManagerGoogleTM'}}
 
                 {literal}
-                    <script>
-                        // Define dataLayer and the gtag function.
-                        window.dataLayer = window.dataLayer || [];
-                        function gtag(){dataLayer.push(arguments);}
-                        gtag('consent', 'default', {
-                            'matomo_analytics_storage': 'denied',
-                            'google_analytics_storage': 'denied'
-                        });
-                    </script>
-                {/literal}
-
-                {literal}
                     <!-- Google Tag Manager -->
-                    <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain" data-category="google_analytics"{/if}{literal} >
+                    <script {/literal}{if {config name='wscTagManagerConsentManagerOrestbida'} == 1}type="text/plain"  data-category="analytics" data-service="google_analytics"{/if}{literal} >
                         (function (w, d, s, l, i) {
                             w[l] = w[l] || [];
                             w[l].push({

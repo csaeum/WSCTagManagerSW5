@@ -1,88 +1,116 @@
-necessary: {
+technisch: {
     readOnly: true,
-    autoClear: {
-    }
+    enabled: true,
 },
-functionality: {
-    enabled: false,
-    autoClear: {
-    }
+komfort: {
+    services: {
+        partner_gutschein: {
+            label: 'Sovendus',
+            onAccept: () => { },
+            onReject: () => { },
+        },
+    },
 },
-matomo_analytics: {
-    enabled: false,
-    autoClear: {
-    }
-},
-google_analytics: {
-    enabled: false,
-    autoClear: {
-        cookies: [
-            {
-                name: /^_ga/,   // regex: match all cookies starting with '_ga'
+analytics: {
+    services: {
+        matomo_analytics: {
+            label: 'Matomo Analytics',
+            onAccept: () => cc.acceptService('matomo_analytics'),
+            onReject: () => cc.rejectService('matomo_analytics'),
+            onAccept: () => {
+                console.log("onAccept Matomo Analytics");
+                _mtm.push({
+                    'event': 'consent_komfort',
+                    'consent_matomo': 'active'
+                });
             },
-            {
-                name: '_gid',   // string: exact cookie name
-            }
-        ]
-    }
+            onReject: () => {
+                console.log("onReject Matomo Analytics");
+                _mtm.push({
+                    'event': 'consent_komfort',
+                    'consent_matomo': 'denied'
+                });
+            },
+        },
+        google_analytics: {
+            label: 'Google Analytics',
+            onAccept: () => cc.acceptService('google_analytics'),
+            onReject: () => cc.rejectService('google_analytics'),
+            onAccept: () => {
+                console.log("onAccept Google Analytics");
+                window.dataLayer.push({
+                    'event': 'consent_google',
+                    'consent_google': 'active'
+                });
+            },
+            onReject: () => {
+                console.log("onReject Google Analytics");
+                dataLayer.push({
+                    'event': 'consent_google',
+                    'consent_google': 'denied'
+                });
+            },
+        },
+        openwebanalytics_analytics: {
+            label: 'OpenWeb Analytics',
+            onAccept: () => {
+                console.log("onAccept OpenWeb Analytics");
+            },
+            onReject: () => {
+                console.log("onReject OpenWeb Analytics");
+            },
+        },
+        youtube_targeting: {
+            label: 'Youtube',
+            onAccept: () => { },
+            onReject: () => { },
+        },
+    },
 },
-bing_targeting: {
-    enabled: false,
-    autoClear: {
-    }
+socialmedia: {
+    services: {
+        facebook_targeting: {
+            label: 'Facebook',
+            onAccept: () => { },
+            onReject: () => { },
+        },
+        instagram_targeting: {
+            label: 'Instagram',
+            onAccept: () => { },
+            onReject: () => { },
+        },
+        pinterest_targeting: {
+            label: 'Pinterest',
+            onAccept: () => { },
+            onReject: () => { },            
+        }
+    },
 },
-clarity_usability: {
-    enabled: false,
-    autoClear: {
-    }
+werbung: {
+    services: {
+        adwords_targeting: {
+            label: 'Google Adwords',
+            onAccept: () => { },
+            onReject: () => { },
+        },
+        bing_targeting: {
+            label: 'Microsoft Bing Advertisement',
+            onAccept: () => { },
+            onReject: () => { },
+        },
+    },
 },
-facebook_targeting: {
-    enabled: false,
-    autoClear: {
-    }
-},
-adwords_targeting: {
-    enabled: false,
-    autoClear: {
-    }
-},
-partner_gutschein: {
-    enabled: false,
-    autoClear: {
-    }
-},
-hotjar_usability: {
-    enabled: false,
-    autoClear: {
-    }
-},
-instagram_targeting: {
-    enabled: false,
-    autoClear: {
-    }
-},
-openwebanalytics_analytics: {
-    enabled: false,
-    autoClear: {
-    }
-},
-pinterest_targeting: {
-    enabled: false,
-    autoClear: {
-    }
-},
-youtube_targeting: {
-    enabled: false,
-    autoClear: {
-    }
-},
-partner_gutschein: {
-    enabled: false,
-    autoClear: {
-    }
-},
-xxx: {
-    enabled: false,
-    autoClear: {
-    }
+usability: {
+    services: {
+        clarity_usability: {
+            label: 'Clarity',
+            onAccept: () => { },
+            onReject: () => { },
+        },
+        hotjar_usability: {
+            label: 'HotJar',
+            onAccept: () => { },
+            onReject: () => { },
+        },
+    },
 }

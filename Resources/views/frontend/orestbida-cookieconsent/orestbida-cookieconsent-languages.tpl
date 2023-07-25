@@ -11,7 +11,7 @@
                 acceptNecessaryBtn: "Alle ablehnen",
                 showPreferencesBtn: "Einstellungen verwalten",
                 closeIconLabel: "Alle ablehnen und schließen",
-                footer: "<a href=\"#link\">Impressum</a> | <a href=\"#link\">Datenschutz</a> | <a href=\"#link\">AGB</a>"
+                footer: "<a href=\"#link\">Impressum</a>|<a href=\"#link\">Datenschutz</a>|<a href=\"#link\">AGB</a>"
             },
             preferencesModal: {
                 title: "Präferenzen für die Zustimmung",
@@ -28,7 +28,7 @@
                     {
                         title: "Streng Notwendige Cookies <span class=\"pm__badge\">Immer Aktiviert</span>",
                         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "necessary",
+                        linkedCategory: "technisch",
                         cookieTable: {
                             headers: {
                                 name: "Name",
@@ -59,7 +59,7 @@
                     {
                         title: "Funktionalitäts Cookies",
                         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "functionality",
+                        linkedCategory: "komfort",
                         cookieTable: {
                             headers: {
                                 name: "Name",
@@ -76,9 +76,9 @@
                         }
                     },
                     {
-                        title: "Matomo Analytics",
+                        title: "Analytics",
                         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "matomo_analytics",
+                        linkedCategory: "analytics",
                         cookieTable: {
                             headers: {
                                 name: "Name",
@@ -95,9 +95,9 @@
                         }
                     },
                     {
-                        title: "Google Analytics",
+                        title: "Social Media",
                         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "google_analytics",
+                        linkedCategory: "socialmedia",
                         cookieTable: {
                             headers: {
                                 name: "Name",
@@ -107,16 +107,16 @@
                             body: [
                                 {
                                     name: "_ga_*, _gid",
-                                    description: "Google Analytics",
-                                    Service: "Marketing"
+                                    description: "Matomo Analytics",
+                                    Service: "Google Analytics"
                                 }
                             ]
                         }
                     },
                     {
-                        title: "bing_targeting",
+                        title: "Werbung",
                         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "bing_targeting",
+                        linkedCategory: "werbung",
                         cookieTable: {
                             headers: {
                                 name: "Name",
@@ -126,16 +126,16 @@
                             body: [
                                 {
                                     name: "_ga_*, _gid",
-                                    description: "Google Analytics",
-                                    Service: "Marketing"
+                                    description: "Matomo Analytics",
+                                    Service: "Google Analytics"
                                 }
                             ]
                         }
                     },
                     {
-                        title: "clarity_usability",
+                        title: "Usability",
                         description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "clarity_usability",
+                        linkedCategory: "usability",
                         cookieTable: {
                             headers: {
                                 name: "Name",
@@ -145,198 +145,8 @@
                             body: [
                                 {
                                     name: "_ga_*, _gid",
-                                    description: "Google Analytics",
-                                    Service: "Marketing"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        title: "facebook_targeting",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "facebook_targeting",
-                        cookieTable: {
-                            headers: {
-                                name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
-                            },
-                            body: [
-                                {
-                                    name: "_ga_*, _gid",
-                                    description: "Google Analytics",
-                                    Service: "Marketing"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        title: "adwords_targeting",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "adwords_targeting",
-                        cookieTable: {
-                            headers: {
-                                name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
-                            },
-                            body: [
-                                {
-                                    name: "_ga_*, _gid",
-                                    description: "Google Analytics",
-                                    Service: "Marketing"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        title: "partner_gutschein",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "partner_gutschein",
-                        cookieTable: {
-                            headers: {
-                                name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
-                            },
-                            body: [
-                                {
-                                    name: "_ga_*, _gid",
-                                    description: "Google Analytics",
-                                    Service: "Marketing"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        title: "hotjar_usability",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "hotjar_usability",
-                        cookieTable: {
-                            headers: {
-                                name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
-                            },
-                            body: [
-                                {
-                                    name: "_ga_*, _gid",
-                                    description: "Google Analytics",
-                                    Service: "Marketing"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        title: "instagram_targeting",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "instagram_targeting",
-                        cookieTable: {
-                            headers: {
-                                name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
-                            },
-                            body: [
-                                {
-                                    name: "_ga_*, _gid",
-                                    description: "Google Analytics",
-                                    Service: "Marketing"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        title: "openwebanalytics_analytics",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "openwebanalytics_analytics",
-                        cookieTable: {
-                            headers: {
-                                name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
-                            },
-                            body: [
-                                {
-                                    name: "_ga_*, _gid",
-                                    description: "Google Analytics",
-                                    Service: "Marketing"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        title: "pinterest_targeting",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "pinterest_targeting",
-                        cookieTable: {
-                            headers: {
-                                name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
-                            },
-                            body: [
-                                {
-                                    name: "_ga_*, _gid",
-                                    description: "Google Analytics",
-                                    Service: "Marketing"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        title: "youtube_targeting",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "youtube_targeting",
-                        cookieTable: {
-                            headers: {
-                                name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
-                            },
-                            body: [
-                                {
-                                    name: "_ga_*, _gid",
-                                    description: "Google Analytics",
-                                    Service: "Marketing"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        title: "partner_gutschein",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "youtube_targeting",
-                        cookieTable: {
-                            headers: {
-                                name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
-                            },
-                            body: [
-                                {
-                                    name: "_ga_*, _gid",
-                                    description: "Google Analytics",
-                                    Service: "Marketing"
-                                }
-                            ]
-                        }
-                    },
-                    {
-                        title: "xxx",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-                        linkedCategory: "xxx",
-                        cookieTable: {
-                            headers: {
-                                name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
-                            },
-                            body: [
-                                {
-                                    name: "_ga_*, _gid",
-                                    description: "Google Analytics",
-                                    Service: "Marketing"
+                                    description: "Matomo Analytics",
+                                    Service: "Google Analytics"
                                 }
                             ]
                         }
