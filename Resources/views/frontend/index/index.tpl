@@ -55,13 +55,6 @@
 
     {$smarty.block.parent}
 
-    {if {config name='wscTagManagerConsentManagerOrestbida'} === '1'}
-        <script src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.0-rc.16/dist/cookieconsent.umd.js"></script>
-        <script>
-            {include file="frontend/orestbida-cookieconsent/cookieconsent-config.js.tpl"}
-        </script>
-    {/if}
-
     {* DataLayer aktiv *}
     {if {config name='wscTagManagerDataLayer'}}
 

@@ -42,6 +42,12 @@
                         _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
                         var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
                         g.async = true; g.src = '{/literal}{config name='wscTagManagerMatomoURL'}{literal}/js/container_{/literal}{config name='wscTagManagerMatomoTMID'}{literal}.js'; s.parentNode.insertBefore(g, s);
+
+                        _mtm.push({
+                            'event': 'consent_matomo',
+                            'consent_matomo': 'active'
+                        });
+                        console.log('Matomo Analytics enabled')
                     </script>
                     <!-- End Matomo Tag Manager -->
                 {/literal}
@@ -71,6 +77,12 @@
                             var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
                             g.async = true; g.src = u + 'matomo.js'; s.parentNode.insertBefore(g, s);
                         })();
+
+                        _mtm.push({
+                            'event': 'consent_matomo',
+                            'consent_matomo': 'active'
+                        });
+                        console.log('Matomo Analytics enabled')
                     </script>
                     <!-- End Matomo Code -->
                 {/literal}
@@ -103,6 +115,12 @@
                                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
                             f.parentNode.insertBefore(j, f);
                         })(window, document, 'script', 'dataLayer', '{/literal}{config name='wscTagManagerGoogleTagID'}{literal}');
+
+                        window.dataLayer.push({
+                            'event': 'consent_google',
+                            'consent_google': 'active'
+                        });
+                        console.log('Google Analytics enabled')
                     </script>
                     <!-- End Google Tag Manager -->
                 {/literal}
@@ -118,6 +136,12 @@
                         function gtag() {dataLayer.push(arguments);}
                         gtag('js', new Date());
                         gtag('config', '{/literal}{config name='wscTagManagerGoogleA4ID'}{literal}');
+
+                        window.dataLayer.push({
+                            'event': 'consent_google',
+                            'consent_google': 'active'
+                        });
+                        console.log('Google Analytics enabled')
                     </script>
                 {/literal}
             {/if}

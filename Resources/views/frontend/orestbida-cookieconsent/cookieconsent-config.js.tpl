@@ -19,27 +19,12 @@
         },
         onFirstConsent: ({cookie}) => {
             console.log("onFirstConsent fired", cookie);
-            {/literal}
-            {*
-                {include file="frontend/orestbida-cookieconsent/orestbida-cookieconsent-function.tpl"}
-            *}
-            {literal}
         },
         onConsent: ({cookie}) => {
             console.log("onConsent fired!", cookie);
-            {/literal}
-            {*
-                {include file="frontend/orestbida-cookieconsent/orestbida-cookieconsent-function.tpl"}
-            *}
-            {literal}
         },
         onChange: ({cookie, changedCategories, changedPreferences}) => {
             console.log("onChange fired!", changedCategories, changedServices);
-            {/literal}
-            {*
-                {include file="frontend/orestbida-cookieconsent/orestbida-cookieconsent-function.tpl"}
-            *}
-            {literal}
         },
         categories: {
             {/literal}

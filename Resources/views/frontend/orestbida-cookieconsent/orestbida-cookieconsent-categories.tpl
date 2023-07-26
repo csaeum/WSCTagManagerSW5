@@ -6,8 +6,30 @@ komfort: {
     services: {
         partner_gutschein: {
             label: 'Sovendus',
-            onAccept: () => { },
-            onReject: () => { },
+            onAccept: () => {
+                console.log("onAccept Live Chat");
+            },
+            onReject: () => {
+                console.log("onReject Live Chat");
+            },
+        },
+        live_chat: {
+            label: 'Live Chat',
+            onAccept: () => {
+                console.log("onAccept Live Chat");
+            },
+            onReject: () => {
+                console.log("onReject Live Chat");
+            },
+        },
+        mautic: {
+            label: 'Mautic Newsletter',
+            onAccept: () => {
+                console.log("onAccept Mautic Newsletter");
+            },
+            onReject: () => {
+                console.log("onReject Mautic Newsletter");
+            },
         },
     },
 },
@@ -15,40 +37,20 @@ analytics: {
     services: {
         matomo_analytics: {
             label: 'Matomo Analytics',
-            onAccept: () => cc.acceptService('matomo_analytics'),
-            onReject: () => cc.rejectService('matomo_analytics'),
             onAccept: () => {
                 console.log("onAccept Matomo Analytics");
-                _mtm.push({
-                    'event': 'consent_komfort',
-                    'consent_matomo': 'active'
-                });
             },
             onReject: () => {
                 console.log("onReject Matomo Analytics");
-                _mtm.push({
-                    'event': 'consent_komfort',
-                    'consent_matomo': 'denied'
-                });
             },
         },
         google_analytics: {
             label: 'Google Analytics',
-            onAccept: () => cc.acceptService('google_analytics'),
-            onReject: () => cc.rejectService('google_analytics'),
             onAccept: () => {
                 console.log("onAccept Google Analytics");
-                window.dataLayer.push({
-                    'event': 'consent_google',
-                    'consent_google': 'active'
-                });
             },
             onReject: () => {
                 console.log("onReject Google Analytics");
-                dataLayer.push({
-                    'event': 'consent_google',
-                    'consent_google': 'denied'
-                });
             },
         },
         openwebanalytics_analytics: {

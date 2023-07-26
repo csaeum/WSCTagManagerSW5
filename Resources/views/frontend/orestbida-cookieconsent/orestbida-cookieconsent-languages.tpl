@@ -5,13 +5,13 @@
         de: {
             consentModal: {
                 label: "Cookie-Zustimmung",
-                title: "Hallo Reisende, es ist Kekszeit!",
-                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.",
+                title: "{/literal}{s name="wscTagManagerSW5/orestbida/settings_model-Blocks-Title"}{/s}{literal} Wir verwenden Cookies",
+                description: "{/literal}{s name="wscTagManagerSW5/orestbida/settings_model-Blocks-Description"}{/s} TEXTBLOCK{literal}",
                 acceptAllBtn: "Alle akzeptieren",
                 acceptNecessaryBtn: "Alle ablehnen",
                 showPreferencesBtn: "Einstellungen verwalten",
                 closeIconLabel: "Alle ablehnen und schließen",
-                footer: "<a href=\"#link\">Impressum</a>|<a href=\"#link\">Datenschutz</a>|<a href=\"#link\">AGB</a>"
+                footer: "<a href=\"/impressum\">Impressum</a>|<a href=\"/datenschutz\">Datenschutz</a>|<a href=\"/agb\">AGB</a>"
             },
             preferencesModal: {
                 title: "Präferenzen für die Zustimmung",
@@ -23,11 +23,11 @@
                 sections: [
                     {
                         title: "Verwendung von Cookies",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                        description: ""
                     },
                     {
-                        title: "Streng Notwendige Cookies <span class=\"pm__badge\">Immer Aktiviert</span>",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        title: "Technisch erforderliche Cookies <span class=\"pm__badge\">Immer Aktiviert</span>",
+                        description: "Technische Cookies",
                         linkedCategory: "technisch",
                         cookieTable: {
                             headers: {
@@ -46,44 +46,79 @@
                                 {
                                     name: 'cookiePreferences-1',
                                     domain: 'www.schicker-mineral.de',
+                                    age: 'Sitzungsende',
                                     desc: 'Shopware eigenes Cookie mit den Einstellungen des CookieBanners von Shopware',
                                 },
                                 {
                                     name: 'nocache-1',
                                     domain: 'www.schicker-mineral.de',
+                                    age: 'Sitzungsende',
                                     desc: 'Shopware eigenes Cookie ob Cache verwendet wird',
+                                },
+                                {
+                                    name: 'PHPSESSID',
+                                    domain: 'www.schicker-mineral.de',
+                                    age: 'Sitzungsende',
+                                    desc: 'Shopware eigenes Cookie um den Kunden zu erkennen und abzusichern',
+                                },
+                                {
+                                    name: 'session-1',
+                                    domain: 'www.schicker-mineral.de',
+                                    age: 'Sitzungsende',
+                                    desc: 'Shopware eigenes Cookie um den Kunden zu erkennen und abzusichern',
+                                },
+                                {
+                                    name: 'x-ua-device',
+                                    domain: 'www.schicker-mineral.de',
+                                    age: 'Sitzungsende',
+                                    desc: 'Shopware eigenes Cookie welches Gerät der User verwendet',
                                 }
                             ]
                         }
                     },
                     {
-                        title: "Funktionalitäts Cookies",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        title: "Komfort Cookies",
+                        description: "{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}",
                         linkedCategory: "komfort",
                         cookieTable: {
                             headers: {
                                 name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
+                                domain: "Beschreibung",
+                                age: "Laufzeit",
+                                desc: "Dienst"
                             },
                             body: [
                                 {
-                                    name: "_ga_*, _gid",
-                                    description: "Used to track you ...",
-                                    Service: "functional"
+                                    name: '--',
+                                    domain: 'sovendus.de',
+                                    age: 'Sitzungsende',
+                                    desc: 'Sovendus',
+                                },
+                                {
+                                    name: '--',
+                                    domain: 'livechat.schicker-mineral.de',
+                                    age: 'Sitzungsende',
+                                    desc: 'Unser eigener Zammad Live-Chat',
+                                },
+                                {
+                                    name: '--',
+                                    domain: 'news.schicker-mineral.de',
+                                    age: 'Sitzungsende',
+                                    desc: 'Unser eigenes Mautic Newsletter Tool',
                                 }
                             ]
                         }
                     },
                     {
                         title: "Analytics",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        description: "{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}",
                         linkedCategory: "analytics",
                         cookieTable: {
                             headers: {
                                 name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
+                                domain: "Beschreibung",
+                                age: "Laufzeit",
+                                desc: "Dienst"
                             },
                             body: [
                                 {
@@ -96,13 +131,14 @@
                     },
                     {
                         title: "Social Media",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        description: "{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}",
                         linkedCategory: "socialmedia",
                         cookieTable: {
                             headers: {
                                 name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
+                                domain: "Beschreibung",
+                                age: "Laufzeit",
+                                desc: "Dienst"
                             },
                             body: [
                                 {
@@ -115,13 +151,14 @@
                     },
                     {
                         title: "Werbung",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        description: "{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}",
                         linkedCategory: "werbung",
                         cookieTable: {
                             headers: {
                                 name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
+                                domain: "Beschreibung",
+                                age: "Laufzeit",
+                                desc: "Dienst"
                             },
                             body: [
                                 {
@@ -134,13 +171,14 @@
                     },
                     {
                         title: "Usability",
-                        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+                        description: "{/literal}{s name="wscTagManagerSW5/orestbida/cookieAllgemeinBeschreibung"}{/s}{literal}",
                         linkedCategory: "usability",
                         cookieTable: {
                             headers: {
                                 name: "Name",
-                                description: "Beschreibung",
-                                Service: "Dienst"
+                                domain: "Beschreibung",
+                                age: "Laufzeit",
+                                desc: "Dienst"
                             },
                             body: [
                                 {
@@ -152,8 +190,8 @@
                         }
                     },
                     {
-                        title: "Weitere Informationen",
-                        description: "For any query in relation to my policy on cookies and your choices, please <a class=\"cc__link\" href=\"#yourdomain.com\">contact me</a>."
+                        title: "{/literal}{s name="wscTagManagerSW5/orestbida/Title-cookieMoreInfo"}{/s}{literal}",
+                        description: "{/literal}{s name="wscTagManagerSW5/orestbida/Description-cookieMoreInfo"}{/s}{literal} <a class=\"cc__link\" href=\"/kontakt\">Kontakt</a>."
                     }
                 ]
             }
